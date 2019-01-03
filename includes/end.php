@@ -11,9 +11,9 @@
     <script src="./assets/js/plugins/bootstrap-switch.js"></script>
     <script src="./assets/js/plugins/bootstrap-tagsinput.js"></script>
     <script src="./assets/js/plugins/bootstrap-selectpicker.js"></script>
-    <script src="./assets/js/plugins/jasny-bootstrap.js"></script>
+    <script src="./assets/js/jasny-bootstrap.min.js"></script>
     <script src="./assets/js/plugins/nouislider.min.js"></script>
-    <script src="./assets/js/plugins/bootstrap-datetimepicker.min.js"></script>
+    <script src="./assets/js/plugins/bootstrap-datetimepicker.js"></script>
 
 </body>
 
