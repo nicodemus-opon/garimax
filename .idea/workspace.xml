@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a29865a3-7a00-4a4f-aba3-7edc37a1797a" name="Default Changelist" comment="" />
+    <list default="true" id="a29865a3-7a00-4a4f-aba3-7edc37a1797a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/home.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/includes/footer.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/includes/navbar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -10,27 +16,81 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/index.php">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/home.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="6" lean-forward="true" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
+            <state relative-caret-position="840">
+              <caret line="56" column="90" selection-start-line="56" selection-start-column="90" selection-end-line="56" selection-end-column="90" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="e#21420#21426#0#HTML" expanded="true" />
+                <element signature="e#22899#22905#0#HTML" expanded="true" />
+                <element signature="e#24550#24556#0#HTML" expanded="true" />
+                <element signature="e#26201#26207#0#HTML" expanded="true" />
+                <element signature="e#27852#27858#0#HTML" expanded="true" />
+                <element signature="e#29497#29503#0#HTML" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="e#34595#34601#0#HTML" expanded="true" />
+                <element signature="e#34685#34691#0#HTML" expanded="true" />
+                <element signature="e#36193#36199#0#HTML" expanded="true" />
+                <element signature="e#36282#36288#0#HTML" expanded="true" />
+                <element signature="e#37786#37792#0#HTML" expanded="true" />
+                <element signature="e#37875#37881#0#HTML" expanded="true" />
+                <element signature="n#style#0;n#div#4;n#div#1;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/includes/footer.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="510">
+              <caret line="39" column="9" selection-start-line="39" selection-start-column="9" selection-end-line="39" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/includes/navbar.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="147">
+              <caret line="33" column="41" lean-forward="true" selection-start-line="33" selection-start-column="41" selection-end-line="33" selection-end-column="41" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>../ass</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>ass</replace>
+    </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/includes/footer.php" />
+        <option value="$PROJECT_DIR$/includes/navbar.php" />
+        <option value="$PROJECT_DIR$/home.php" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
     <option name="width" value="1280" />
     <option name="height" value="800" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -43,6 +103,17 @@
             <path>
               <item name="garimax" type="b2602c69:ProjectViewProjectNode" />
               <item name="garimax" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="garimax" type="b2602c69:ProjectViewProjectNode" />
+              <item name="garimax" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="garimax" type="b2602c69:ProjectViewProjectNode" />
+              <item name="garimax" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="img" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -77,12 +148,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1546519259095</updated>
-      <workItem from="1546519262234" duration="489000" />
+      <workItem from="1546519262234" duration="6630000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="489000" />
+    <option name="totallyTimeSpent" value="6630000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -93,7 +164,7 @@
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" />
-      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Version Control" weight="0.32876712" />
       <window_info anchor="bottom" id="Terminal" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -115,8 +186,51 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="6" lean-forward="true" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
+        <state relative-caret-position="15">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" selection-end-column="29" />
+          <folding>
+            <element signature="e#2818#2872#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/footer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="39" column="9" selection-start-line="39" selection-start-column="9" selection-end-line="39" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/home.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="840">
+          <caret line="56" column="90" selection-start-line="56" selection-start-column="90" selection-end-line="56" selection-end-column="90" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="e#21420#21426#0#HTML" expanded="true" />
+            <element signature="e#22899#22905#0#HTML" expanded="true" />
+            <element signature="e#24550#24556#0#HTML" expanded="true" />
+            <element signature="e#26201#26207#0#HTML" expanded="true" />
+            <element signature="e#27852#27858#0#HTML" expanded="true" />
+            <element signature="e#29497#29503#0#HTML" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="e#34595#34601#0#HTML" expanded="true" />
+            <element signature="e#34685#34691#0#HTML" expanded="true" />
+            <element signature="e#36193#36199#0#HTML" expanded="true" />
+            <element signature="e#36282#36288#0#HTML" expanded="true" />
+            <element signature="e#37786#37792#0#HTML" expanded="true" />
+            <element signature="e#37875#37881#0#HTML" expanded="true" />
+            <element signature="n#style#0;n#div#4;n#div#1;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/navbar.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="33" column="41" lean-forward="true" selection-start-line="33" selection-start-column="41" selection-end-line="33" selection-end-column="41" />
         </state>
       </provider>
     </entry>
