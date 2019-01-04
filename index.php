@@ -17,9 +17,10 @@ include('includes/navbar.php');
             <div class="row">
                 <div class="col-md-8 ml-auto mr-auto text-center">
                     <img src="assets/img/favicon.png" alt="Circle Image" style="height:180px;width:180px;" class="rounded-circle">
-                    <h1 class="title"> You should be here!</h1>
-                    <h4 class="description">5,000 capacity venue, holding some of the latest technology lighting with a
-                        24 colour laser system Amnesia is one of the islands most legendary clubs.</h4>
+                    <h1 class="title"> Find the appropriate car for you</h1>
+                    <h4 class="description">Explore the vast model range of new and used cars by
+                        widely known manufacturers on our website.
+                    </h4>
                 </div>
                 <div class="col-md-10 ml-auto mr-auto">
                     <div class="card card-raised card-form-horizontal card-plain" data-background-color>
@@ -31,9 +32,12 @@ include('includes/navbar.php');
                                             <select class="selectpickers form-control form-control-lg text-primarys"
                                                     data-style="select-with-transition btn-primary btn-round"
                                                     title="Select Category" data-size="7">
-                                                <option class="text-primary" value="1">Category</option>
-                                                <option class="text-primary" value="2">Foobar</option>
-                                                <option class="text-primary" value="3">Is great</option>
+                                                <option class="text-primary" value="1">Category (Body Type)</option>
+                                                <option class="text-primary" value="2">Saloons</option>
+                                                <option class="text-primary" value="3">Wagons</option>
+                                                <option class="text-primary" value="3">Vans</option>
+                                                <option class="text-primary" value="3">Pick Ups</option>
+                                                <option class="text-primary" value="3">4x4</option>
                                             </select>
                                         </div>
                                     </div>
@@ -44,9 +48,11 @@ include('includes/navbar.php');
                                             <select class="selectpickere form-control form-control-lg text-primarys "
                                                     data-style="select-with-transition btn-primary btn-round"
                                                     title="Select Price Range" data-size="7">
-                                                <option class="text-primary" value="1">Category</option>
-                                                <option class="text-primary" value="2">Foobar</option>
-                                                <option class="text-primary" value="3">Is great</option>
+                                                <option class="text-primary" value="1">Price Range(KSH 1000)</option>
+                                                <option class="text-primary" value="2">100-500 </option>
+                                                <option class="text-primary" value="3">500-1000</option>
+                                                <option class="text-primary" value="3">1000-1500</option>
+                                                <option class="text-primary" value="3">1500-2000</option>
                                             </select>
                                         </div>
                                     </div>
@@ -88,15 +94,16 @@ include('includes/navbar.php');
 
                     <div class="card card-product card-plain">
                         <div class="card-image">
-                            <img class="img rounded" src="cars/1.jpg"/>
+                            <img class="img rounded" src="cars/1/i3.jpeg"/>
                         </div>
 
                         <div class="card-body">
                             <h4 class="card-title">
-                                <a href="#pablo">Saint Laurent</a>
+                                <a href="#pablo">Toyota Hiace Van</a>
                             </h4>
-                            <p class="card-description">The structured shoulders and sleek detailing ensure a sharp
-                                silhouette. Team it with a silk pocket square and leather loafers.</p>
+                            <p class="card-description">We offer bank financing
+                                Hire purchase with a maximum duration of 12months
+                            </p>
 
                             <p>
                                 <button class="btn btn-primary btn-round" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -105,9 +112,9 @@ include('includes/navbar.php');
                             <div id="collapseOne" class="collapse hide" aria-labelledby="headingOne" data-parent="#accordionExample">
                                 <div class="card-body">
                                     <ul class="list-group list-group-flush">
-                                        <li class="list-group-item">Cras justo odio</li>
-                                        <li class="list-group-item">Dapibus ac facilisis in</li>
-                                        <li class="list-group-item">Vestibulum at eros</li>
+                                        <li class="list-group-item">3000c diesel</li>
+                                        <li class="list-group-item">2wd</li>
+                                        <li class="list-group-item">KDH201</li>
                                     </ul>
                                 </div>
                             </div>
@@ -115,8 +122,8 @@ include('includes/navbar.php');
                             </p>
                             <div class="card-footer">
                                 <div class="price-container">
-                                    <span class="price price-old"> &euro;1,430</span>
-                                    <span class="price price-new"> &euro;743</span>
+
+                                    <span class="price price-new"> KSH 2.45M </span>
                                 </div>
                                 <div class="stats stats-right">
                                     <button type="button" rel="tooltip" title="" class="btn btn-icon btn-neutral"
@@ -128,24 +135,40 @@ include('includes/navbar.php');
                         </div>
                     </div>
                 </div>
-
                 <div class="col-md-4">
 
                     <div class="card card-product card-plain">
                         <div class="card-image">
-                            <img class="img rounded" src="cars/2.jpg"/>
+                            <img class="img rounded" src="cars/2/i9.jpeg"/>
                         </div>
 
                         <div class="card-body">
                             <h4 class="card-title">
-                                <h4 class="card-title">Saint Laurent</h4>
+                                <a href="#pablo">BMW 320i </a>
                             </h4>
-                            <p class="card-description">The structured shoulders and sleek detailing ensure a sharp
-                                silhouette. Team it with a silk pocket square and leather loafers.</p>
+                            <p class="card-description">
+                                2011 model
+                            </p>
+
+                            <p>
+                                <button class="btn btn-primary btn-round" type="button" data-toggle="collapse" data-target="#collapse2" aria-expanded="true" aria-controls="collapseOne">
+                                    <i class="now-ui-icons design_bullet-list-67"></i> Specifications
+                                </button>
+                            <div id="collapse2" class="collapse hide" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item">2000cc petrol</li>
+                                        <li class="list-group-item">2wd</li>
+
+                                    </ul>
+                                </div>
+                            </div>
+
+                            </p>
                             <div class="card-footer">
                                 <div class="price-container">
-                                    <span class="price price-old"> &euro;1,430</span>
-                                    <span class="price price-new">&euro;743</span>
+
+                                    <span class="price price-new"> KSH 1.55M </span>
                                 </div>
                                 <div class="stats stats-right">
                                     <button type="button" rel="tooltip" title="" class="btn btn-icon btn-neutral"
@@ -156,40 +179,52 @@ include('includes/navbar.php');
                             </div>
                         </div>
                     </div>
-
                 </div>
-
                 <div class="col-md-4">
 
                     <div class="card card-product card-plain">
                         <div class="card-image">
-                            <img class="img rounded" src="cars/3.jpg"/>
+                            <img class="img rounded" src="cars/3/i3.jpeg"/>
                         </div>
 
                         <div class="card-body">
                             <h4 class="card-title">
-                                <h4 class="card-title">Gucci</h4>
+                                <a href="#pablo">TVW golf tsi </a>
                             </h4>
-                            <p class="card-description">The smooth woven-wool is water resistant to ensure you stay
-                                pristine after a long-haul flight. Cut in a trim yet comfortable regular fit.</p>
+                            <p class="card-description">We offer bank financing
+                                Hire purchase with a maximum duration of 12months
+                            </p>
+
+                            <p>
+                                <button class="btn btn-primary btn-round" type="button" data-toggle="collapse" data-target="#collapse3" aria-expanded="true" aria-controls="collapseOne">
+                                    <i class="now-ui-icons design_bullet-list-67"></i> Specifications
+                                </button>
+                            <div id="collapse3" class="collapse hide" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item">1400cc petrol </li>
+                                        <li class="list-group-item">2wd</li>
+                                        <li class="list-group-item">2012/10</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            </p>
                             <div class="card-footer">
                                 <div class="price-container">
-                                    <span class="price price-old"> &euro;2,430</span>
-                                    <span class="price price-new">&euro;890</span>
+
+                                    <span class="price price-new"> KSH 1.15M </span>
                                 </div>
                                 <div class="stats stats-right">
-                                    <button type="button" rel="tooltip" title=""
-                                            class="btn btn-icon btn-neutral btn-default"
-                                            data-original-title="Add to Wishlist">
+                                    <button type="button" rel="tooltip" title="" class="btn btn-icon btn-neutral"
+                                            data-original-title="Saved to Wishlist">
                                         <i class="now-ui-icons ui-2_favourite-28"></i>
                                     </button>
                                 </div>
                             </div>
                         </div>
                     </div>
-
                 </div>
-
             </div>
         </div>
     </div><!-- section -->
@@ -201,16 +236,16 @@ include('includes/navbar.php');
             <div class="row">
                 <div class="col-md-5">
                     <h2 class="title">Get in Touch</h2>
-                    <h4 class="description">You need more information? Check what other persons are saying about our product. They are very happy with their purchase.</h4>
+                    <h4 class="description">You need more information?</h4>
                     <div class="info info-horizontal">
                         <div class="icon icon-primary">
                             <i class="now-ui-icons location_pin"></i>
                         </div>
                         <div class="description">
-                            <h4 class="info-title">Find us at the office</h4>
-                            <p class="description"> Bld Mihail Kogalniceanu, nr. 8,<br>
-                                7652 Bucharest,<br>
-                                Romania
+                            <h4 class="info-title">Find us at </h4>
+                            <p class="description"> Fortis Industrial park,<br>
+                                Warehouse 41 Chaddy road,Off Mombasa rd at Gateway mall<br>
+                                Syiokimau
                             </p>
                         </div>
                     </div>
@@ -220,8 +255,8 @@ include('includes/navbar.php');
                         </div>
                         <div class="description">
                             <h4 class="info-title">Give us a ring</h4>
-                            <p class="description"> Michael Jordan<br>
-                                +40 762 321 762<br>
+                            <p class="description"> Fred Dimbah<br>
+                                0733626262<br>
                                 Mon - Fri, 8:00-22:00
                             </p>
                         </div>

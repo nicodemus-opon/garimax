@@ -12,17 +12,17 @@
         <nav>
             <ul>
                 <li>
-                    <a href="/">
+                    <a href="#">
                         Home
                     </a>
                 </li>
                 <li>
-                    <a href="http://presentation.creative-tim.com">
+                    <a href="#">
                         About Us
                     </a>
                 </li>
                 <li>
-                    <a href="http://blog.creative-tim.com">
+                    <a href="#">
                         Blog
                     </a>
                 </li>

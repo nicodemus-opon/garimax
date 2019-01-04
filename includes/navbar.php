@@ -4,7 +4,7 @@
 
 
         <div class="navbar-translate">
-            <a class="navbar-brand" href="./index.php" rel="tooltip" title="GariMax Motors Ltd Home Page" data-placement="bottom" >
+            <a class="navbar-brand" href="index.php" rel="tooltip" title="GariMax Motors Ltd Home Page" data-placement="bottom" >
                     GARIMAX MOTORS
             </a>
 
@@ -33,11 +33,11 @@
                         <p>VIEW CARS</p>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="../sections.html#headers">
+                        <a class="dropdown-item" href="#">
                             <i class="now-ui-icons shopping_box"></i>
                             CATEGORIES
                         </a>
-                        <a class="dropdown-item" href="../sections.html#features">
+                        <a class="dropdown-item" href="#">
                             <i class="now-ui-icons files_box"></i>
                             BROWSE
                         </a>
@@ -51,11 +51,11 @@
                         <p>BLOGS</p>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="../examples/about-us.html">
+                        <a class="dropdown-item" href="#">
                             <i class="now-ui-icons text_align-left"></i>
                             ARTICLES
                         </a>
-                        <a class="dropdown-item" href="../examples/blog-post.html">
+                        <a class="dropdown-item" href="#">
                             <i class="now-ui-icons design_image"></i>
                             GALLERY
                         </a>
@@ -64,7 +64,7 @@
                 </li>
 
                 <li class="nav-item dropdown">
-                    <a href="home.php#contactx" class="nav-link dropdown-togglev" id="navbarDropdownMenuLink1" >
+                    <a href="index.php#contactx" class="nav-link dropdown-togglev" id="navbarDropdownMenuLink1" >
                         <i class="now-ui-icons ui-1_email-85"></i>
                         <p>CONTACT US</p>
                     </a>
@@ -72,7 +72,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link btn btn-neutral btn-round ccc" href="tel:0707584888" target="_blank">
+                    <a class="nav-link btn btn-neutral btn-round ccc" href="tel:0733626262" target="_blank">
                         <p><i class="now-ui-icons tech_mobile"></i> CALL US</p>
                     </a>
                 </li>
