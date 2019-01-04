@@ -4,7 +4,7 @@
 
 
         <div class="navbar-translate">
-            <a class="navbar-brand" href="https://demos.creative-tim.com/now-ui-kit-pro/index.html" rel="tooltip" title="Designed by Invision. Coded by Creative Tim" data-placement="bottom" target="_blank">
+            <a class="navbar-brand" href="./index.php" rel="tooltip" title="GariMax Motors Ltd Home Page" data-placement="bottom" target="_blank">
                     GARIMAX MOTORS
             </a>
 
@@ -64,7 +64,7 @@
                 </li>
 
                 <li class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-togglev" id="navbarDropdownMenuLink1" >
+                    <a href="home.php#contactx" class="nav-link dropdown-togglev" id="navbarDropdownMenuLink1" >
                         <i class="now-ui-icons ui-1_email-85"></i>
                         <p>CONTACT US</p>
                     </a>
@@ -72,8 +72,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link btn btn-neutral btn-round" href="https://www.creative-tim.com/product/now-ui-kit-pro" target="_blank">
-
+                    <a class="nav-link btn btn-neutral btn-round ccc" href="tel:0707584888" target="_blank">
                         <p><i class="now-ui-icons tech_mobile"></i> CALL US</p>
                     </a>
                 </li>
