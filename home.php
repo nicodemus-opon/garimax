@@ -12,7 +12,7 @@ include('includes/navbar.php');
 
 <div class="wrapper">
     <div class="page-header header-filter">
-        <div class="page-header-image" style="background-image: url('assets/img/bgk.jpg');"></div>
+        <div class="page-header-image" data-parallax="true" style="background-image: url('assets/img/bgk.jpg');"></div>
         <div class="container">
             <div class="row">
                 <div class="col-md-8 ml-auto mr-auto text-center">
@@ -515,7 +515,7 @@ include('includes/navbar.php');
                             </div> <!-- end card -->
                         </div>
                         <div class="col-md-3 ml-auto mr-auto">
-                            <button rel="tooltip" class="btn btn-primary btn-round">Load more...</button>
+                            <button rel="tooltip" class="btn btn-primary btn-block btn-round">Load more...</button>
                         </div>
                     </div>
                 </div>
@@ -623,7 +623,7 @@ include('includes/navbar.php');
     </div><!-- section -->
 
 
-    <div class="contactus-1 section-image" style="background-image: url('assets/img/contact1.jpg')">
+    <div class="contactus-1 section-image" data-parallax="true" style="background-image: url('assets/img/bgk.jpg')">
 
         <div class="container">
             <div class="row">
