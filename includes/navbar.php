@@ -4,7 +4,7 @@
 
 
         <div class="navbar-translate">
-            <a class="navbar-brand" href="./index.php" rel="tooltip" title="GariMax Motors Ltd Home Page" data-placement="bottom" target="_blank">
+            <a class="navbar-brand" href="./index.php" rel="tooltip" title="GariMax Motors Ltd Home Page" data-placement="bottom" >
                     GARIMAX MOTORS
             </a>
 
