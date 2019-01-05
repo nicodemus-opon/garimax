@@ -17,7 +17,7 @@ include('includes/navbar.php');
             <div class="row" style="padding-top: 20px">
                 <div class="col-md-8 ml-auto mr-auto text-center">
                     <img src="assets/img/favicon.png" alt="Circle Image" style="height:180px;width:180px;" class="rounded-circle">
-                    <h3 class="title"> Find the appropriate car for you</h3>
+                    <h3 class="title"> Garimax Motors <br> Find the appropriate car for you</h3>
                     <h5 class="description">Explore the vast model range of new and used cars by
                         widely known manufacturers on our website.
                     </h5>

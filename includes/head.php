@@ -1,22 +1,23 @@
 <!doctype html>
 <html lang="en">
-<script type="application/ld+json">
-    {
-        "@context": "http://schema.org",
-        "@type": "WebSite",
-        "url": "https://garimax.co.ke",
-        "potentialAction":
-        { "@type": "SearchAction",
-            "target": "https://garimax.co.ke/search.php?q={search_term_string}",
-            "query-input": "required name=search_term_string" }
-    }
-</script>
+
 <head>
     <title>Garimax Motors Ltd</title>
     <meta charset="utf-8"/>
     <link rel="apple-touch-icon" sizes="76x76" href="./assets/img/apple-icon.png">
     <link rel="icon" type="image/png" href="./assets/img/favicon.png">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <script type="application/ld+json">
+        {
+            "@context": "http://schema.org",
+            "@type": "WebSite",
+            "url": "https://garimax.co.ke",
+            "potentialAction":
+            { "@type": "SearchAction",
+                "target": "https://garimax.co.ke/search.php?q={search_term_string}",
+                "query-input": "required name=search_term_string" }
+        }
+    </script>
     <!-- seo-->
     <script type="application/ld+json">
         {
