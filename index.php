@@ -261,7 +261,18 @@ include('includes/navbar.php');
                             </p>
                         </div>
                     </div>
-
+                    <div class="info info-horizontal">
+                        <div class="icon icon-primary">
+                            <i class="now-ui-icons ui-1_send"></i>
+                        </div>
+                        <div class="description">
+                            <h4 class="info-title">Send us an Email</h4>
+                            <p class="description"> info@garimax.co.ke<br>
+                                sales@garimax.co.ke<br>
+                                admin@garimax.co.ke
+                            </p>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-md-5 ml-auto mr-auto" >
                     <div class="card card-contact card-raised">

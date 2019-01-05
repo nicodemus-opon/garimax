@@ -27,9 +27,9 @@
             "@type": "LocalBusiness",
             "name": "Garimax Motors Ltd",
             "telephone": "0733626262",
-            "legalName" : "Garimax Motors Ltd",
-            "brand" : "Garimax Motors",
-            "alternateName" : "Garimax Motors",
+            "legalName": "Garimax Motors Ltd",
+            "brand": "Garimax Motors",
+            "alternateName": "Garimax Motors",
             "url": "https://garimax.co.ke",
             "priceRange": "50000-1.5M",
             "logo": "https://garimax.co.ke/assets/img/favicon.png",
@@ -63,15 +63,20 @@
                     "@type": "ContactPoint",
                     "telephone": "+254733626262",
                     "contactType": "sales",
-                    "areaServed": [ "KE" ]
-                }]
+                    "areaServed": [
+                        "KE"
+                    ]
+                }
+            ]
         }
     </script>
     <!--  Social tags      -->
     <meta name="keywords"
-          content="Garimax, Gari Max, Car dealership Kenya, used cars,cheap,quality,garimax motors">
+          content="Garimax, Gari Max, Car dealership Kenya, used cars,cheap,quality,garimax motors,cars,kenya,garimax motors ltd">
     <meta name="description"
-          content="GariMax Motors ltd, imports and sells Quality Used cars from Australia, Britain and Japan. Any car needs? we are here at your service">
+          content="Garimax Motors ltd ,explore the vast model range of new and used cars by
+widely known manufacturers on our website.
+With a robust selection of popular vehicles on hand, as well as leading vehicles from BMW and Toyota.We offer bank financing Hire purchase with a maximum duration of 12months">
 
     <!-- Required meta tags -->
     <meta charset="utf-8">
