@@ -14,13 +14,13 @@ include('includes/navbar.php');
     <div class="page-header header-filter">
         <div class="page-header-image" data-parallax="true" style="background-image: url('assets/img/bgk.jpg');"></div>
         <div class="container">
-            <div class="row">
+            <div class="row" style="padding-top: 20px">
                 <div class="col-md-8 ml-auto mr-auto text-center">
                     <img src="assets/img/favicon.png" alt="Circle Image" style="height:180px;width:180px;" class="rounded-circle">
-                    <h1 class="title"> Find the appropriate car for you</h1>
-                    <h4 class="description">Explore the vast model range of new and used cars by
+                    <h3 class="title"> Find the appropriate car for you</h3>
+                    <h5 class="description">Explore the vast model range of new and used cars by
                         widely known manufacturers on our website.
-                    </h4>
+                    </h5>
                 </div>
                 <div class="col-md-10 ml-auto mr-auto">
                     <div class="card card-raised card-form-horizontal card-plain" data-background-color>
@@ -255,7 +255,7 @@ include('includes/navbar.php');
                         </div>
                         <div class="description">
                             <h4 class="info-title">Give us a ring</h4>
-                            <p class="description"> Fred Dimbah<br>
+                            <p class="description"> Fred Dembah<br>
                                 0733626262<br>
                                 Mon - Fri, 8:00-22:00
                             </p>

@@ -40,6 +40,20 @@
         });
     });
 </script>
+<script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "url": "https://garimax.co.ke",
+        "logo": "https://garimax.co.ke/assets/assets/img/favicon.png",
+        "areaServed": "KE",
+        "contactPoint": [{
+            "@type": "ContactPoint",
+            "telephone": "+254707584688",
+            "contactType": "Sales"
+        }]
+    }
+</script>
 </body>
 
 </html>
