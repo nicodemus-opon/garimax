@@ -59,7 +59,7 @@ include('include/head.php');
                                     <i class="now-ui-icons users_circle-08"></i>
                                   </div>
                                 </span>
-                                    <input type="text" class="form-control" placeholder="First Name...">
+                                    <input type="email" class="form-control" placeholder="email">
                                 </div>
 
                                 <div class="input-group no-border form-control-lg">
@@ -68,7 +68,7 @@ include('include/head.php');
                                             <i class="now-ui-icons text_caps-small"></i>
                                         </div>
                                     </div>
-                                    <input type="text" placeholder="Last Name..." class="form-control">
+                                    <input type="password" placeholder="password" class="form-control">
                                 </div>
 
 
@@ -93,35 +93,6 @@ include('include/head.php');
                 </div>
             </div>
         </div>
-        <footer class="footer">
-            <div class="container-fluid">
-                <nav>
-                    <ul>
-                        <li>
-                            <a href="https://www.creative-tim.com">
-                                Creative Tim
-                            </a>
-                        </li>
-                        <li>
-                            <a href="http://presentation.creative-tim.com">
-                                About Us
-                            </a>
-                        </li>
-                        <li>
-                            <a href="http://blog.creative-tim.com">
-                                Blog
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-                <div class="copyright">
-                    &copy;
-                    <script>document.write(new Date().getFullYear())</script>
-                    , Designed by <a href="https://www.invisionapp.com" target="_blank">Invision</a>. Coded by <a
-                            href="https://www.creative-tim.com" target="_blank">Creative Tim</a>.
-                </div>
-            </div>
-        </footer>
 
     </div>
 
@@ -130,7 +101,7 @@ include('include/head.php');
 
 
 <?php
-include('include/heaendd.php');
+include('include/end.php');
 
 ?>
 

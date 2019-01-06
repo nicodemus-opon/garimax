@@ -226,6 +226,11 @@ include('includes/navbar.php');
                     </div>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-md-4"> </div>
+                <div class="col-md-4"> <h5><a href="browse.php" class="btn-block btn btn-round btn-primary btn-outline-primary"> view all cars</a></h5></div>
+                <div class="col-md-4"> </div>
+            </div>
         </div>
     </div><!-- section -->
 

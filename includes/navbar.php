@@ -20,7 +20,7 @@
 
 
                 <li class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-togglev" id="navbarDropdownMenuLink1" >
+                    <a href="index.php" class="nav-link dropdown-togglev" id="navbarDropdownMenuLink1" >
                         <i class="now-ui-icons shopping_shop"></i>
                         <p>HOME</p>
                     </a>
@@ -33,11 +33,11 @@
                         <p>VIEW CARS</p>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="#">
+                        <a class="dropdown-item" href="categories.php">
                             <i class="now-ui-icons shopping_box"></i>
                             CATEGORIES
                         </a>
-                        <a class="dropdown-item" href="#">
+                        <a class="dropdown-item" href="browse.php">
                             <i class="now-ui-icons files_box"></i>
                             BROWSE
                         </a>
