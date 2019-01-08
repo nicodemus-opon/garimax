@@ -54,12 +54,6 @@ include('includes/navbar.php');
                         </a>
                     </div>
 
-                    <p class="blockquote blockquote-primary">
-                        "And thank you for turning my personal jean jacket into a couture piece. Wear yours with
-                        mirrored sunglasses on vacation."<br><br>
-                        <small>Kanye West</small>
-                    </p>
-
                 </div>
                 <div class="col-md-6 ml-auto mr-auto">
                     <h2 class="title"> Saint Laurent </h2>
@@ -89,7 +83,7 @@ include('includes/navbar.php');
                             <div class="card-header" role="tab" id="headingTwo">
                                 <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"
                                    aria-expanded="false" aria-controls="collapseTwo">
-                                    Designer Information
+                                    Specifications
 
                                     <i class="now-ui-icons arrows-1_minimal-down"></i>
                                 </a>
@@ -108,7 +102,7 @@ include('includes/navbar.php');
                             <div class="card-header" role="tab" id="headingThree">
                                 <a class="collapsed" data-toggle="collapse" data-parent="#accordion"
                                    href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                    Details and Care
+                                    Additional Information
 
                                     <i class="now-ui-icons arrows-1_minimal-down"></i>
                                 </a>
@@ -128,101 +122,11 @@ include('includes/navbar.php');
                             </div>
                         </div>
                     </div>
-
-                    <div class="row pick-size">
-                        <div class="col-lg-6 col-md-8 col-sm-6">
-                            <label>Select color</label>
-                            <select class="selectpicker" data-style="select-with-transition btn btn-block"
-                                    data-size="7">
-                                <option value="1">Black</option>
-                                <option value="2">Gray</option>
-                                <option value="3">White</option>
-                            </select>
-                        </div>
-                        <div class="col-lg-6 col-md-8 col-sm-6">
-                            <label>Select size</label>
-                            <select class="selectpicker" data-style="select-with-transition btn btn-block"
-                                    data-size="7">
-                                <option value="1">Small</option>
-                                <option value="2">Medium</option>
-                                <option value="3">Large</option>
-                            </select>
-                        </div>
-                    </div>
                     <div class="row justify-content-end">
-                        <button class="btn btn-primary mr-3">Add to Cart &nbsp;<i
-                                    class="now-ui-icons shopping_cart-simple"></i></button>
+                        <button class="btn btn-primary mr-3">Request This Car &nbsp;<i
+                                    class="now-ui-icons arrows-1_minimal-right"></i></button>
                     </div>
                 </div>
-            </div>
-
-            <div class="features-4">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-8 ml-auto mr-auto text-center">
-                            <h2 class="title">Not convinced yet!</h2>
-                            <h4 class="description">Havenly is a convenient, personal and affordable way to redecorate
-                                your home room by room. Collaborate with our professional interior designers on our
-                                online platform. </h4>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="card card-background card-raised" data-background-color
-                                 style="background-image: url('../assets/img/bg24.jpg')">
-                                <div class="info">
-                                    <div class="icon icon-white">
-                                        <i class="now-ui-icons shopping_delivery-fast"></i>
-                                    </div>
-                                    <div class="description">
-                                        <h4 class="info-title">1 Day Delivery </h4>
-                                        <p>Divide details about your product or agency work into parts. Write a few
-                                            lines about each one. A paragraph describing a feature will be enough.</p>
-                                        <a href="#pablo" class="ml-3">Find more...</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4">
-                            <div class="card card-background card-raised" data-background-color
-                                 style="background-image: url('../assets/img/bg28.jpg')">
-                                <div class="info">
-                                    <div class="icon icon-white">
-                                        <i class="now-ui-icons business_badge"></i>
-                                    </div>
-                                    <div class="description">
-                                        <h4 class="info-title">Refund Policy</h4>
-                                        <p>Divide details about your product or agency work into parts. Write a few
-                                            lines about each one. Very good refund policy just for you.</p>
-                                        <a href="#pablo">Find more...</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4">
-                            <div class="card card-background card-raised" data-background-color
-                                 style="background-image: url('../assets/img/bg25.jpg')">
-                                <div class="info">
-
-                                    <div class="icon">
-                                        <i class="now-ui-icons ui-2_favourite-28"></i>
-                                    </div>
-                                    <div class="description">
-                                        <h4 class="info-title">Popular Item</h4>
-                                        <p>Share a floor plan, and we'll create a visualization of your room. A
-                                            paragraph describing a feature will be enough. This is a popular item for
-                                            you.</p>
-                                        <a href="#pablo" class="ml-3">Find more...</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
             </div>
 
         </div>

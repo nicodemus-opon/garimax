@@ -19,7 +19,7 @@
 
     <title>
 
-        Now UI Dashboard PRO by Creative Tim
+        Garimax Motors ltd
 
     </title>
 

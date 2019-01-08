@@ -14,7 +14,7 @@
             "url": "https://garimax.co.ke",
             "potentialAction": {
                 "@type": "SearchAction",
-                "target": "https://garimax.co.ke/search.php?q={search_term_string}",
+                "target": "https://garimax.co.ke/browse.php?q={search_term_string}",
                 "query-input": "required name=search_term_string"
             }
         }
@@ -87,8 +87,21 @@ With a robust selection of popular vehicles on hand, as well as leading vehicles
     <link href="./assets/css/bootstrap.min.css" rel="stylesheet"/>
     <!-- NOW UI Kit CSS -->
     <link rel="stylesheet" href="./assets/css/now-ui-kit.min.css">
-
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+        var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+        (function(){
+            var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+            s1.async=true;
+            s1.src='https://embed.tawk.to/5c332c47280f3649d4f3ec97/default';
+            s1.charset='UTF-8';
+            s1.setAttribute('crossorigin','*');
+            s0.parentNode.insertBefore(s1,s0);
+        })();
+    </script>
+    <!--End of Tawk.to Script-->
 </head>
+
 
 <body>
     

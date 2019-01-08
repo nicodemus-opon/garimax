@@ -9,7 +9,6 @@ include('includes/navbar.php');
 </noscript>
 <!-- End Google Tag Manager (noscript) -->
 
-
 <div class="wrapper">
     <div class="page-header header-filter">
         <div class="page-header-image" data-parallax="true" style="background-image: url('assets/img/bgk.jpg');"></div>
