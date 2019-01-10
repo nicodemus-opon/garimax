@@ -16,8 +16,8 @@ include('includes/navbar.php');
             <div class="container">
                 <div class="row">
                     <div class="col-3">
-                        <input type="submit"  class="btn btn-primary btn-block"
-                               autocomplete="current-password"/>
+                        <input type="submit"  class="btn btn-primary btn-block" value="Search"
+                               autocomplete=""/>
                     </div>
                     <div class="col-9">
                         <div class="form-group input-group-lg ">

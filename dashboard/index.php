@@ -10,10 +10,12 @@
 include('include/head.php');
 
 ?>
+<link href="dist/styles.imageuploader.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="assets/editor/styles/simditor.css"/>
 <div class="wrapper ">
     <?php
     include('include/sidebar.php');
-
+    include_once('../includes/connect.php');
     ?>
 
     <div class="main-panel">
@@ -90,11 +92,7 @@ include('include/head.php');
                 </div>
             </div>
         </nav>
-        <!-- End Navbar -->
-
-
         <div class="panel-header panel-header-sm">
-
 
         </div>
         <div class="content">
@@ -143,7 +141,6 @@ include('include/head.php');
                                         <h5 class="info-text"> Let's start with the basic information (with
                                             validation)</h5>
                                         <div class="row justify-content-center">
-
                                             <div class="col-sm-10">
                                                 <div class="input-group form-control-lg">
                                                     <div class="input-group-prepend">
@@ -154,10 +151,10 @@ include('include/head.php');
                                                     <input type="text" class="form-control"
                                                            placeholder="Title (required)" name="title">
                                                 </div>
-
                                                 <div class="input-group form-control-lg">
                                                     <!--label>Short Description</label-->
-                                                    <textarea class="form-control" placeholder="Short Description (required)"></textarea>
+                                                    <textarea class="form-control"
+                                                              placeholder="Short Description (required)"></textarea>
                                                     <!--input type="text" placeholder="Short Description (required)"
                                                            class="form-control" name="lastname"/-->
                                                 </div>
@@ -175,9 +172,26 @@ include('include/head.php');
                                                     <select class="selectpicker" data-size="7"
                                                             data-style="btn btn-primary btn-round"
                                                             title="Category">
-                                                        <option value="Afghanistan"> Afghanistan</option>
-                                                        <option value="Albania"> Albania</option>
 
+                                                        <?php
+                                                        require_once "../includes/connect.php";
+                                                        // Create connectionhjh
+                                                        //echo "Connected successfully";
+                                                        $sql = "select * from categories where namex is not NULL ";
+                                                        //echo $sql;
+                                                        $result = $con->query($sql);
+                                                        if ($result->num_rows > 0) {
+                                                            echo '<div class="list-group">';
+                                                            while ($row = $result->fetch_assoc()) {
+                                                                echo '<option value="'.$row["namex"].'">'. $row["namex"].'</option>';
+                                                            }
+                                                            echo '</div>';
+                                                        } else {
+                                                            echo "Error: " . $sql . "<br>" . $con->error;
+                                                        }
+
+                                                        $con->close();
+                                                        ?>
                                                     </select>
                                                 </div>
                                             </div>
@@ -187,37 +201,13 @@ include('include/head.php');
                                     <div class="tab-pane fade" id="account">
                                         <h5 class="info-text"> What are you doing? (checkboxes) </h5>
                                         <div class="row justify-content-center">
-                                            <div class="col-lg-10">
-                                                <div class="row">
-                                                    <div class="col-sm-4">
-                                                        <div class="choice" data-toggle="wizard-checkbox">
-                                                            <input type="checkbox" name="jobb" value="Design">
-                                                            <div class="icon">
-                                                                <i class="now-ui-icons design-2_ruler-pencil"></i>
-                                                            </div>
-                                                            <h6>Design</h6>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-sm-4">
-                                                        <div class="choice" data-toggle="wizard-checkbox">
-                                                            <input type="checkbox" name="jobb" value="Code">
-                                                            <div class="icon">
-                                                                <i class="now-ui-icons business_bulb-63"></i>
-                                                            </div>
-                                                            <h6>Code</h6>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-sm-4">
-                                                        <div class="choice" data-toggle="wizard-checkbox">
-                                                            <input type="checkbox" name="jobb" value="Develop">
-                                                            <div class="icon">
-                                                                <i class="now-ui-icons tech_tv"></i>
-                                                            </div>
-                                                            <h6>Develop</h6>
-                                                        </div>
-                                                    </div>
-                                                </div>
+
+                                            <div class="col-sm-12">
+                                                <textarea id="editor" class="form-control"
+                                                          name="specs"
+                                                          placeholder="Short Description (required)"></textarea>
                                             </div>
+
                                         </div>
                                     </div>
                                     <div class="tab-pane fade" id="address">
@@ -225,41 +215,23 @@ include('include/head.php');
                                             <div class="col-sm-12">
                                                 <h5 class="info-text"> Are you living in a nice area? </h5>
                                             </div>
-                                            <div class="col-sm-7">
+                                            <div class="col-sm-10">
                                                 <div class="form-group">
-                                                    <label>Street Name</label>
-                                                    <input type="text" class="form-control">
+                                                    <div class="uploader__box js-uploader__box l-center-box">
+                                                        <!--form action="your/nonjs/fallback/" method="POST"-->
+                                                        <div class="uploader__contents">
+                                                            <label class="button button--secondary" for="fileinput">Select
+                                                                Files</label>
+                                                            <input id="fileinput" class="uploader__file-input"
+                                                                   type="file" multiple value="Select Files">
+                                                        </div>
+                                                        <input class="button button--big-bottom" type="submit"
+                                                               value="Upload Selected Files">
+                                                        <!--/form-->
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <div class="col-sm-3">
-                                                <div class="form-group">
-                                                    <label>Street No.</label>
-                                                    <input type="text" class="form-control">
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-5">
-                                                <div class="form-group">
-                                                    <label>City</label>
-                                                    <input type="text" class="form-control">
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-5">
-                                                <div class="form-group">
-                                                    <label>Country</label>
-                                                    <select class="selectpicker" data-size="7"
-                                                            data-style="btn btn-primary btn-round"
-                                                            title="Single Select">
-                                                        <option value="Afghanistan"> Afghanistan</option>
-                                                        <option value="Albania"> Albania</option>
-                                                        <option value="Algeria"> Algeria</option>
-                                                        <option value="American Samoa"> American Samoa</option>
-                                                        <option value="Andorra"> Andorra</option>
-                                                        <option value="Angola"> Angola</option>
-                                                        <option value="Anguilla"> Anguilla</option>
-                                                        <option value="Antarctica"> Antarctica</option>
-                                                    </select>
-                                                </div>
-                                            </div>
+
                                         </div>
                                     </div>
                                 </div>
@@ -300,7 +272,19 @@ include('include/end.php');
 <script>
     $(document).ready(function () {
 
-
+        $(document).ready(function () {
+            $('#addbtn').click(function () {
+                var newitem = $('#add').val();
+                var uniqid = Math.round(new Date().getTime() + (Math.random() * 100));
+                $('#list').append('<li id="' + uniqid + '" class="list-group-item"><input type="button" data-id="' + uniqid + '" class="listelement btn btn-neutral" value="X" /> ' + newitem + '<input type="hidden" name="listed[]" value="' + newitem + '"></li>');
+                $('#add').val('');
+                return false;
+            });
+            $('#list').delegate(".listelement", "click", function () {
+                var elemid = $(this).attr('data-id');
+                $("#" + elemid).remove();
+            });
+        });
         $('#facebook').sharrre({
             share: {
                 facebook: true
@@ -723,4 +707,29 @@ include('include/end.php');
 
     });
 </script>
-
+<script src="dist/jquery.imageuploader.js"></script>
+<script>
+    var options = {};
+    $('.js-uploader__box').uploader(options);
+    var options = {
+        submitButtonCopy: 'Upload Selected Files',
+        instructionsCopy: 'Drag and Drop, or',
+        furtherInstructionsCopy: 'Your can also drop more files, or',
+        selectButtonCopy: 'Select Files',
+        secondarySelectButtonCopy: 'Select More Files',
+        dropZone: $(this),
+        fileTypeWhiteList: ['jpg', 'png', 'jpeg', 'gif', 'pdf'],
+        badFileTypeMessage: 'Sorry, we\'re unable to accept this type of file.',
+        ajaxUrl: '/ajax/upload',
+        testMode: false
+    };
+</script>
+<script type="text/javascript" src="assets/editor/scripts/module.js"></script>
+<script type="text/javascript" src="assets/editor/scripts/uploader.js"></script>
+<script type="text/javascript" src="assets/editor/scripts/hotkeys.js"></script>
+<script type="text/javascript" src="assets/editor/scripts/simditor.js"></script>
+<script>
+    var editor = new Simditor({
+        textarea: $('#editor')
+    });
+</script>
