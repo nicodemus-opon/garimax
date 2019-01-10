@@ -8,7 +8,6 @@
 
 <?php
 include('include/head.php');
-
 ?>
 <link href="dist/styles.imageuploader.css" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="assets/editor/styles/simditor.css"/>

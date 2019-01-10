@@ -13,7 +13,7 @@ include('include/head.php');
                     <span class="navbar-toggler-bar bar3"></span>
                 </button>
             </div>
-            <a class="navbar-brand" href="#pablo">Garimax Login</a>
+            <a class="navbar-brand" href="login.php">Garimax Login</a>
         </div>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
@@ -76,9 +76,9 @@ include('include/head.php');
 
 
                             <div class="card-footer ">
-                                <a href="#pablo" class="btn btn-neutral btn-round btn-lg btn-block mb-3">Get Started</a>
+                                <a href="register.php" class="btn btn-neutral btn-round btn-lg btn-block mb-3">Get Started</a>
                                 <div class="pull-left">
-                                    <h6><a href="#pablo" class="link footer-link">Create Account</a></h6>
+                                    <h6><a href="register.php" class="link footer-link">Create Account</a></h6>
                                 </div>
 
                                 <div class="pull-right">
