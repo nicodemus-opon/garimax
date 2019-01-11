@@ -1,13 +1,12 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: nico
- * Date: 2019-01-04
- * Time: 08:52
- */ ?>
-
-<?php
 include('include/head.php');
+?>
+<?php
+if (isset($_SESSION['namex']) && !empty($_SESSION['namex'])) {
+    echo "";
+} else {
+    echo "<script type='text/javascript'> document.location = 'logout.php'; </script>";
+}
 ?>
 <link href="dist/styles.imageuploader.css" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="assets/editor/styles/simditor.css"/>
@@ -29,7 +28,7 @@ include('include/head.php');
                             <span class="navbar-toggler-bar bar3"></span>
                         </button>
                     </div>
-                    <a class="navbar-brand" href="#pablo">Wizard</a>
+                    <a class="navbar-brand" href="#pablo">Publish Wizard</a>
                 </div>
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
@@ -133,12 +132,10 @@ include('include/head.php');
                                     </ul>
                                 </div>
                             </div>
-
                             <div class="card-body">
                                 <div class="tab-content">
                                     <div class="tab-pane show active" id="about">
-                                        <h5 class="info-text"> Let's start with the basic information (with
-                                            validation)</h5>
+                                        <h5 class="info-text"> Let's start with the basic information</h5>
                                         <div class="row justify-content-center">
                                             <div class="col-sm-10">
                                                 <div class="input-group form-control-lg">
@@ -152,7 +149,7 @@ include('include/head.php');
                                                 </div>
                                                 <div class="input-group form-control-lg">
                                                     <!--label>Short Description</label-->
-                                                    <textarea class="form-control"
+                                                    <textarea class="form-control" name="shortdesc"
                                                               placeholder="Short Description (required)"></textarea>
                                                     <!--input type="text" placeholder="Short Description (required)"
                                                            class="form-control" name="lastname"/-->
@@ -162,16 +159,15 @@ include('include/head.php');
                                             <div class="col-lg-5">
                                                 <div class="form-group">
                                                     <label>Price (Ksh)</label>
-                                                    <input type="text" class="form-control">
+                                                    <input type="text" name="price" class="form-control">
                                                 </div>
                                             </div>
                                             <div class="col-lg-5">
                                                 <div class="form-group">
                                                     <label>Category (Body Type)</label>
-                                                    <select class="selectpicker" data-size="7"
+                                                    <select name="category" class="selectpicker" data-size="7"
                                                             data-style="btn btn-primary btn-round"
                                                             title="Category">
-
                                                         <?php
                                                         require_once "../includes/connect.php";
                                                         // Create connectionhjh
@@ -182,13 +178,12 @@ include('include/head.php');
                                                         if ($result->num_rows > 0) {
                                                             echo '<div class="list-group">';
                                                             while ($row = $result->fetch_assoc()) {
-                                                                echo '<option value="'.$row["namex"].'">'. $row["namex"].'</option>';
+                                                                echo '<option value="' . $row["namex"] . '">' . $row["namex"] . '</option>';
                                                             }
                                                             echo '</div>';
                                                         } else {
                                                             echo "Error: " . $sql . "<br>" . $con->error;
                                                         }
-
                                                         $con->close();
                                                         ?>
                                                     </select>
@@ -220,9 +215,10 @@ include('include/head.php');
                                                         <!--form action="your/nonjs/fallback/" method="POST"-->
                                                         <div class="uploader__contents">
                                                             <label class="button button--secondary" for="fileinput">Select
-                                                                Files</label>
+                                                                images</label>
                                                             <input id="fileinput" class="uploader__file-input"
-                                                                   type="file" multiple value="Select Files">
+                                                                   type="file" name="fires" multiple
+                                                                   value="Select Files">
                                                         </div>
                                                         <input class="button button--big-bottom" type="submit"
                                                                value="Upload Selected Files">
@@ -731,4 +727,10 @@ include('include/end.php');
     var editor = new Simditor({
         textarea: $('#editor')
     });
+</script>
+<script>
+    $('#fileinput0').change(function () {
+        console.log("rand");
+    });
+
 </script>

@@ -1,6 +1,5 @@
 <?php
 include('include/head.php');
-
 ?>
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-transparent  navbar-absolute bg-primary fixed-top">
@@ -32,21 +31,56 @@ include('include/head.php');
 
 
 <div class="wrapper wrapper-full-page ">
-    <div class="full-page login-page section-image" filter-color="black" data-image="assets/img/" style="background-image: url('../assets/img/bgk.jpg');">
+    <div class="full-page login-page section-image" filter-color="black" data-image="assets/img/"
+         style="background-image: url('../assets/img/bgk.jpg');">
         <!--   you can change the color of the filter page using: data-color="blue | purple | green | orange | red | rose " -->
-        <div class="page-header-image" data-parallax="true" style="background-image: url('../assets/img/bgk.jpg');"></div>
+        <div class="page-header-image" data-parallax="true"
+             style="background-image: url('../assets/img/bgk.jpg');"></div>
         <div class="content">
             <div class="container">
                 <div class="col-md-4 ml-auto mr-auto">
-                    <form class="form" method="" action="">
+                    <?php
+                    if (!empty($_POST)) {
+                        require_once "../includes/connect.php";
+                        $usrname = $_POST["username"];
+                        $pssword = $_POST["password"];
+                        //echo "password";
+                        $sql = "SELECT * FROM users WHERE namex='" . $usrname . "' AND passwordx='" . $pssword . "'";
+                        //print $sql;
+                        $result = $con->query($sql);
+                        if ($result->num_rows > 0) {
 
+                            while ($row = $result->fetch_assoc()) {
+                                $_SESSION["namex"] = $row["namex"];
+                                $_SESSION["passx"] = $row["passx"];
+                                $_SESSION["rolex"] = $row["rolex"];
+                            }
+                            print '
+                  <div class="alert alert-success" role="alert">
+    <span class="alert-inner--text"><strong>Success: </strong> Login Successful</span>
+</div>
+                  ';
+                            echo "<script type='text/javascript'> document.location = './'; </script>";
+
+
+                        } else {
+                            print '
+                  <div class="alert alert-warning" role="alert">
+    <span class="alert-inner--text"><strong>Error: </strong> Invalid Credentials</span>
+</div>
+                  ';
+                        }
+                    }
+                    ?>
+                    <form class="form" method="POST" action="login.php">
 
                         <div class="card card-login card-plain">
 
                             <div class="card-header ">
                                 <div class="logo-containerx text-center">
                                     <!--img src="../assets/img/favicon.png" alt=""-->
-                                    <img src="../assets/img/favicon.png" alt="Circle Image" style="height:180px;width:180px;" class="rounded-circle">
+                                    <img src="../assets/img/favicon.png" alt="Circle Image"
+                                         style="height:180px;width:180px;" class="rounded-circle">
                                 </div>
                             </div>
 
@@ -59,7 +93,7 @@ include('include/head.php');
                                     <i class="now-ui-icons users_circle-08"></i>
                                   </div>
                                 </span>
-                                    <input type="email" class="form-control" placeholder="email">
+                                    <input type="email" name="username" class="form-control" placeholder="email">
                                 </div>
 
                                 <div class="input-group no-border form-control-lg">
@@ -68,7 +102,7 @@ include('include/head.php');
                                             <i class="now-ui-icons text_caps-small"></i>
                                         </div>
                                     </div>
-                                    <input type="password" placeholder="password" class="form-control">
+                                    <input type="password" name="password" placeholder="password" class="form-control">
                                 </div>
 
 
@@ -76,13 +110,14 @@ include('include/head.php');
 
 
                             <div class="card-footer ">
-                                <a href="register.php" class="btn btn-neutral btn-round btn-lg btn-block mb-3">Get Started</a>
+                                <input type="submit" value="Get Started"
+                                       class="btn btn-neutral btn-round btn-lg btn-block mb-3">
                                 <div class="pull-left">
                                     <h6><a href="register.php" class="link footer-link">Create Account</a></h6>
                                 </div>
 
                                 <div class="pull-right">
-                                    <h6><a href="#pablo" class="link footer-link">Need Help?</a></h6>
+                                    <h6><a href="../" class="link footer-link">Garimax Home Page</a></h6>
                                 </div>
                             </div>
 
@@ -102,6 +137,6 @@ include('include/head.php');
 
 <?php
 include('include/end.php');
-
+//exit();
 ?>
 

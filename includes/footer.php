@@ -26,6 +26,11 @@
                         Blog
                     </a>
                 </li>
+                <li>
+                    <a href="dashboard/">
+                        Dashboard
+                    </a>
+                </li>
             </ul>
         </nav>
         <div class="copyright" id="copyright">

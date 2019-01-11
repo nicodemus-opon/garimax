@@ -70,7 +70,8 @@ include('include/head.php');
                                             <i class="now-ui-icons text_caps-small"></i>
                                         </div>
                                     </div>
-                                    <input id="password" name="passx"type="password" placeholder="password" class="form-control">
+                                    <input id="password" name="passx" type="password" placeholder="password"
+                                           class="form-control">
                                 </div>
 
                                 <div class="input-group no-border form-control-lg">
@@ -79,14 +80,16 @@ include('include/head.php');
                                             <i class="now-ui-icons text_caps-small"></i>
                                         </div>
                                     </div>
-                                    <input id="confirm_password" type="password" placeholder="password Confirm" class="form-control">
+                                    <input id="confirm_password" name="passx" type="password"
+                                           placeholder="password Confirm" class="form-control">
                                 </div>
 
                             </div>
 
 
                             <div class="card-footer ">
-                                <input type="submit" id="message" value="Create Account" class="btn btn-neutral btn-round btn-lg btn-block mb-3">
+                                <input type="submit" id="message" value="Create Account"
+                                       class="btn btn-neutral btn-round btn-lg btn-block mb-3" disabled>
 
                             </div>
 
@@ -111,8 +114,11 @@ include('include/end.php');
 <script>
     $('#password, #confirm_password').on('keyup', function () {
         if ($('#password').val() == $('#confirm_password').val()) {
-            $('#message').html('Create Account').css('color', 'green');
-        } else
-            $('#message').html('Passwords so not Match').css('color', 'red');
+            $('#message').val('Create Account').css('color', 'green');
+            $('#message').removeAttr('disabled');
+        } else {
+            $('#message').attr('disabled');
+            $('#message').val('Passwords do not Match').css('color', 'red');
+        }
     });
 </script>
