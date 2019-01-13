@@ -36,7 +36,7 @@
         <div class="copyright" id="copyright">
             &copy;
             <script>document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))</script>
-            , Garimax Motors LTD</a>.
+            , Garimax Motors LTD.
         </div>
     </div>
 

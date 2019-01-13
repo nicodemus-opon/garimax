@@ -101,28 +101,28 @@ include('includes/navbar.php');
                     echo '';
                     while ($row = $result->fetch_assoc()) {
                         echo '<div class="col-md-4">
-<div data-aos="fade-up">
+<div data-aos="fade-up" data-aos-duration="1000">
     <div class="card card-product card-plain">
         <div class="card-image">
-         <a href="product.php?q='.$row["idx"].'">
-            <img class="img rounded" src="dashboard/vehicles/'.$row["idx"].'/'.$row["display"].'"/>
+         <a href="product.php?q=' . $row["idx"] . '">
+            <img class="img rounded" src="dashboard/vehicles/' . $row["idx"] . '/' . $row["display"] . '"/>
             </a>
         </div>
 
         <div class="card-body">
             <h4 class="card-title">
-                <a href="product.php?q='.$row["idx"].'">'.$row["titlex"].'</a>
+                <a href="product.php?q=' . $row["idx"] . '">' . $row["titlex"] . '</a>
             </h4>
-            <p class="card-description">'.$row["descx"].'
+            <p class="card-description">' . $row["descx"] . '
             </p>
-            '.$row["specsx"].'
+            ' . $row["specsx"] . '
             <div class="card-footer">
                 <div class="price-container">
 
-                    <span class="price price-new">'. $row["pricex"].' </span>
+                    <span class="price price-new"> KSH. ' . $row["pricex"] . ' </span>
                 </div>
                 <div class="stats stats-right">
-                    <a href="product.php?q='.$row["idx"].'" rel="tooltip" title="" class="btn btn-icon btn-primary"
+                    <a href="product.php?q=' . $row["idx"] . '" rel="tooltip" title="" class="btn btn-icon btn-primary"
                             data-original-title="View This Car"> 
                         <i class="now-ui-icons arrows-1_minimal-right"></i>
                     </a>
@@ -153,7 +153,7 @@ include('includes/navbar.php');
     </div><!-- section -->
 
 
-    <div class="contactus-1 section-image" id="contactx" data-parallax="true"
+    <div class="contactus-1 section-image" id="contactx"
          style="background-image: url('assets/img/bgk.jpg')">
 
         <div class="container">
@@ -161,51 +161,51 @@ include('includes/navbar.php');
                 <div class="col-md-5">
                     <h2 class="title">Get in Touch</h2>
                     <h4 class="description">You need more information?</h4>
-                    <div data-aos="fade-left">
-                    <div class="info info-horizontal">
-                        <div class="icon icon-primary">
-                            <i class="now-ui-icons location_pin"></i>
-                        </div>
-                        <div class="description">
-                            <h4 class="info-title">Find us at </h4>
-                            <p class="description"> Fortis Industrial park,<br>
-                                Warehouse 41 Chaddy road,Off Mombasa rd at Gateway mall<br>
-                                Syiokimau
-                            </p>
-                        </div>
-                    </div>
-                    </div>
-                    <div data-aos="fade-left">
-                    <div class="info info-horizontal">
-                        <div class="icon icon-primary">
-                            <i class="now-ui-icons tech_mobile"></i>
-                        </div>
-                        <div class="description">
-                            <h4 class="info-title">Give us a ring</h4>
-                            <p class="description"> Fred Dembah<br>
-                                0733626262<br>
-                                Mon - Fri, 8:00-22:00
-                            </p>
+                    <div data-aos="fade-up">
+                        <div class="info info-horizontal">
+                            <div class="icon icon-primary">
+                                <i class="now-ui-icons location_pin"></i>
+                            </div>
+                            <div class="description">
+                                <h4 class="info-title">Find us at </h4>
+                                <p class="description"> Fortis Industrial park,<br>
+                                    Warehouse 41 Chaddy road,Off Mombasa rd at Gateway mall<br>
+                                    Syiokimau
+                                </p>
+                            </div>
                         </div>
                     </div>
+                    <div data-aos="fade-up">
+                        <div class="info info-horizontal">
+                            <div class="icon icon-primary">
+                                <i class="now-ui-icons tech_mobile"></i>
+                            </div>
+                            <div class="description">
+                                <h4 class="info-title">Give us a ring</h4>
+                                <p class="description"> Fred Dembah<br>
+                                    0733626262<br>
+                                    Mon - Fri, 8:00-22:00
+                                </p>
+                            </div>
+                        </div>
                     </div>
-                        <div data-aos="fade-left">
-                    <div class="info info-horizontal">
-                        <div class="icon icon-primary">
-                            <i class="now-ui-icons ui-1_send"></i>
-                        </div>
-                        <div class="description">
-                            <h4 class="info-title">Send us an Email</h4>
-                            <p class="description"> info@garimax.co.ke<br>
-                                sales@garimax.co.ke<br>
-                                admin@garimax.co.ke
-                            </p>
+                    <div data-aos="fade-up">
+                        <div class="info info-horizontal">
+                            <div class="icon icon-primary">
+                                <i class="now-ui-icons ui-1_send"></i>
+                            </div>
+                            <div class="description">
+                                <h4 class="info-title">Send us an Email</h4>
+                                <p class="description"> info@garimax.co.ke<br>
+                                    sales@garimax.co.ke<br>
+                                    admin@garimax.co.ke
+                                </p>
+                            </div>
                         </div>
                     </div>
-                        </div>
                 </div>
                 <div class="col-md-5 ml-auto mr-auto">
-                    <div data-aos="fade-left">
+
                     <div class="card card-contact card-raised">
                         <form role="form" id="contact-form1" method="post">
                             <div class="card-header text-center">
@@ -257,7 +257,8 @@ include('includes/navbar.php');
                                 <div class="row">
 
                                     <div class="col-md-12">
-                                        <button type="submit" class="btn btn-primary btn-round btn-block pull-right">
+                                        <button type="submit"
+                                                class="btn btn-primary btn-round btn-block pull-right">
                                             Send Message
                                         </button>
                                     </div>
@@ -266,7 +267,7 @@ include('includes/navbar.php');
 
                         </form>
                     </div>
-                    </div>
+
                 </div>
             </div>
         </div>
@@ -276,10 +277,6 @@ include('includes/navbar.php');
 include('includes/footer.php');
 
 ?>
-
-
-</div>
-
 
 <?php
 include('includes/end.php');

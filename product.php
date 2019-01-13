@@ -42,13 +42,11 @@ $files = scandir($d);
         ?>');">
         </div>
     </div>
-
-
     <div class="section">
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <div data-aos="fade-right">
+                    <div data-aos="fade-up">
                     <div id="productCarousel" class="carousel slide" data-ride="carousel" data-interval="100">
                         <ol class="carousel-indicators">
                             <?php
@@ -106,15 +104,15 @@ $files = scandir($d);
                     </div>
                 </div>
                 <div class="col-md-6 ml-auto mr-auto">
-                    <div data-aos="fade-left">
+
                     <h2 class="title"> <?php
                         echo $titlex;
                         ?> </h2>
-                    </div>
+
                     <h5 class="category"><?php
                         echo $categoryx;
                         ?></h5>
-                    <div data-aos="fade-up">
+                    <div data-aos="fade-up" data-aos-duration="1000">
                     <h3 class="main-price">KSH. <?php
                         echo $pricex;
                         ?></h3>

@@ -139,10 +139,10 @@ include_once('../includes/connect.php');
                                     <td><?php echo $row['specsx']; ?></td>
                                     <td class="text-right">
                                         <!--div class="btn-group" role="group" -->
-                                        <a href=<?php echo "'update-article.php?name=" . $row['idx'] . "'"; ?> class="btn
+                                        <a href=<?php echo "'cars-update.php?id=" . $row['idx'] . "'"; ?> class="btn
                                            btn-round btn-primary btn-icon btn-sm "><i
                                                 class="now-ui-icons design-2_ruler-pencil"></i></a>
-                                        <a href=<?php echo "'delete-article.php?name=" . $row['idx'] . "'"; ?> class="btn
+                                        <a href=<?php echo "'cars-delete.php?id=" . $row['idx'] . "'"; ?> class="btn
                                            btn-round btn-primary btn-icon btn-sm "><i
                                                 class="now-ui-icons ui-1_simple-remove"></i></a>
 

@@ -15,19 +15,21 @@ include('includes/navbar.php');
             <h2 class="section-title">Find what you need</h2>
             <div class="container">
                 <div class="row">
-                    <div class="col-3">
-                        <input type="submit" class="btn btn-primary btn-block" value="Search"
-                               autocomplete=""/>
-                    </div>
-                    <div class="col-9">
-                        <div class="form-group input-group-lg ">
+                    <div class="col-md-9">
+                        <div class="form-group input-group-lg " style="padding-top: 10px">
                             <!--div class="input-group-prepend ">
                                                 <div class="input-group-text"><i class="now-ui-icons ui-1_zoom-bold"></i></div>
                                             </div-->
-                            <input type="text" placeholder="Search cars..." class="form-control"
+                            <input type="text" placeholder="Search Text..." class="form-control"
                                    autocomplete="current-password"/>
                         </div>
                     </div>
+                    <div class="col-sm-3">
+                        <input type="submit" class="btn btn-primary btn-block btn-round btn-lg" value="Search"
+                               autocomplete=""/>
+                    </div>
+
+
                     <div class="col-1h">
 
                     </div>
@@ -311,7 +313,7 @@ include('includes/navbar.php');
                             echo '';
                             while ($row = $result->fetch_assoc()) {
                                 echo '<div class="col-lg-4 col-md-6">
-
+<div data-aos="fade-up" data-aos-duration="2000">
                             <div class="card card-product card-plain">
                                 <div class="card-image">
                                     <a href="product.php?q='.$row["idx"].'">
@@ -338,7 +340,7 @@ include('includes/navbar.php');
                                     </div>
                                 </div>
                             </div> <!-- end card -->
-                        </div>';
+                        </div></div>';
 
 
                             }
