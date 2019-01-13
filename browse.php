@@ -16,7 +16,7 @@ include('includes/navbar.php');
             <div class="container">
                 <div class="row">
                     <div class="col-3">
-                        <input type="submit"  class="btn btn-primary btn-block" value="Search"
+                        <input type="submit" class="btn btn-primary btn-block" value="Search"
                                autocomplete=""/>
                     </div>
                     <div class="col-9">
@@ -300,172 +300,51 @@ include('includes/navbar.php');
 
                 <div class="col-md-9">
                     <div class="row">
-                        <div class="col-lg-4 col-md-6">
+                        <?php
+                        require_once "includes/connect.php";
+                        // Create connectionhjh
+                        //echo "Connected successfully";
+                        $sql = "select * from cars where idx is not NULL ";
+                        //echo $sql;
+                        $result = $con->query($sql);
+                        if ($result->num_rows > 0) {
+                            echo '';
+                            while ($row = $result->fetch_assoc()) {
+                                echo '<div class="col-lg-4 col-md-6">
+
                             <div class="card card-product card-plain">
                                 <div class="card-image">
-                                    <a href="#">
-                                        <img src="assets/img/polo.jpg" alt="..."/>
+                                    <a href="product.php?q='.$row["idx"].'">
+                                        <img src="dashboard/vehicles/'.$row["idx"].'/'.$row["display"].'" alt="..."/>
                                     </a>
                                 </div>
                                 <div class="card-body">
-                                    <a href="#">
-                                        <h4 class="card-title">Polo Ralph Lauren</h4>
+                                    <a href="product.php?q='.$row["idx"].'">
+                                        <h4 class="card-title">'.$row["titlex"].'</h4>
                                     </a>
                                     <p class="card-description">
-                                        Impeccably tailored in Italy from lightweight navy wool.
+                                        '.$row["descx"].'
                                     </p>
                                     <div class="card-footer">
                                         <div class="price-container">
-                                            <span class="price"> &euro; 300</span>
+                                            <span class="price"> KSH. '.$row["pricex"].'</span>
                                         </div>
-
-                                        <button class="btn btn-danger btn-neutral btn-icon btn-round pull-right"
-                                                rel="tooltip" title="Remove from wishlist" data-placement="left">
-                                            <i class="now-ui-icons ui-2_favourite-28"></i>
-                                        </button>
+<div class="stats stats-right">
+                                        <a href="product.php?q='.$row["idx"].'" rel="tooltip" title="" class="btn btn-icon btn-primary"
+                            data-original-title="View This Car"> 
+                        <i class="now-ui-icons arrows-1_minimal-right"></i>
+                    </a>
+                                    </div>
                                     </div>
                                 </div>
                             </div> <!-- end card -->
-                        </div>
-
-                        <div class="col-lg-4 col-md-6">
-                            <div class="card card-product card-plain">
-                                <div class="card-image">
-                                    <a href="#">
-                                        <img src="assets/img/tom-ford.jpg" alt="..."/>
-                                    </a>
-                                </div>
-                                <div class="card-body">
-                                    <a href="#">
-                                        <h4 class="card-title">Tom Ford</h4>
-                                    </a>
-                                    <p class="card-description">
-                                        Immaculate tailoring is TOM FORD's forte.
-                                    </p>
-                                    <div class="card-footer">
-                                        <div class="price-container">
-                                            <span class="price"> &euro; 879</span>
-                                        </div>
-
-                                        <button class="btn btn-neutral btn-icon btn-round pull-right" rel="tooltip"
-                                                title="Add to wishlist" data-placement="left">
-                                            <i class="now-ui-icons ui-2_favourite-28"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div> <!-- end card -->
-                        </div>
-                        <div class="col-lg-4 col-md-6">
-                            <div class="card card-product card-plain">
-                                <div class="card-image">
-                                    <a href="#">
-                                        <img src="assets/img/wooyoungmi.jpg" alt="..."/>
-                                    </a>
-                                </div>
-                                <div class="card-body">
-                                    <a href="#">
-                                        <h4 class="card-title">Wooyoungmi</h4>
-                                    </a>
-                                    <p class="card-description">
-                                        Dark-grey slub wool, pintucked notch lapels.
-                                    </p>
-                                    <div class="card-footer">
-                                        <div class="price-container">
-                                            <span class="price">&euro; 555</span>
-                                        </div>
-
-                                        <button class="btn btn-neutral btn-icon btn-round pull-right" rel="tooltip"
-                                                title="Add to wishlist" data-placement="left">
-                                            <i class="now-ui-icons ui-2_favourite-28"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div> <!-- end card -->
-                        </div>
+                        </div>';
 
 
-                        <div class="col-lg-4 col-md-6">
-                            <div class="card card-product card-plain">
-                                <div class="card-image">
-                                    <a href="#">
-                                        <img src="assets/img/sweeney.jpg" alt="..."/>
-                                    </a>
-                                </div>
-                                <div class="card-body">
-                                    <a href="#">
-                                        <h4 class="card-title">Thom Sweeney</h4>
-                                    </a>
-                                    <p class="card-description">
-                                        It's made from lightweight grey wool woven.
-                                    </p>
-                                    <div class="card-footer">
-                                        <div class="price-container">
-                                            <span class="price"> &euro; 680</span>
-                                        </div>
+                            }
+                        } ?>
 
-                                        <button class="btn btn-neutral btn-icon btn-round pull-right" rel="tooltip"
-                                                title="Add to wishlist" data-placement="left">
-                                            <i class="now-ui-icons ui-2_favourite-28"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div> <!-- end card -->
-                        </div>
 
-                        <div class="col-lg-4 col-md-6">
-                            <div class="card card-product card-plain">
-                                <div class="card-image">
-                                    <a href="#">
-                                        <img src="assets/img/kingsman.jpg" alt="..."/>
-                                    </a>
-                                </div>
-                                <div class="card-body">
-                                    <a href="#">
-                                        <h4 class="card-title">Kingsman</h4>
-                                    </a>
-                                    <p class="card-description">
-                                        Crafted from khaki cotton and fully canvassed.
-                                    </p>
-                                    <div class="card-footer">
-                                        <div class="price-container">
-                                            <span class="price"> &euro; 725</span>
-                                        </div>
-
-                                        <button class="btn btn-neutral btn-icon btn-round pull-right" rel="tooltip"
-                                                title="Remove from wishlist" data-placement="left">
-                                            <i class="now-ui-icons ui-2_favourite-28"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div> <!-- end card -->
-                        </div>
-                        <div class="col-lg-4 col-md-6">
-                            <div class="card card-product card-plain">
-                                <div class="card-image">
-                                    <a href="#">
-                                        <img src="assets/img/boglioli.jpg" alt="..."/>
-                                    </a>
-                                </div>
-                                <div class="card-body">
-                                    <a href="#">
-                                        <h4 class="card-title">Boglioli</h4>
-                                    </a>
-                                    <p class="card-description">
-                                        Masterfully crafted in Northern Italy.
-                                    </p>
-                                    <div class="card-footer">
-                                        <div class="price-container">
-                                            <span class="price">&euro; 699</span>
-                                        </div>
-
-                                        <button class="btn btn-neutral btn-icon btn-round pull-right" rel="tooltip"
-                                                title="Add to wishlist" data-placement="left">
-                                            <i class="now-ui-icons ui-2_favourite-28"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div> <!-- end card -->
-                        </div>
                         <div class="col-md-3 ml-auto mr-auto">
                             <button rel="tooltip" class="btn btn-primary btn-block btn-round">Load more...</button>
                         </div>

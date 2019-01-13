@@ -1,5 +1,10 @@
 <?php
 include('include/head.php');
+if (!empty($_POST)) {
+    $total = count($_FILES['upload']['name']);
+    echo "uuuuuuuuvvbbbvbbvbbbbvbbvbbvhghghhghghghghh";
+    echo $total;
+}
 ?>
 <?php
 if (isset($_SESSION['namex']) && !empty($_SESSION['namex'])) {
@@ -10,6 +15,11 @@ if (isset($_SESSION['namex']) && !empty($_SESSION['namex'])) {
 ?>
 <link href="dist/styles.imageuploader.css" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="assets/editor/styles/simditor.css"/>
+
+<link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="filer/jpreview.css">
+<!--script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script-->
+
 <div class="wrapper ">
     <?php
     include('include/sidebar.php');
@@ -98,11 +108,11 @@ if (isset($_SESSION['namex']) && !empty($_SESSION['namex'])) {
                 <!--      Wizard container        -->
                 <div class="wizard-container">
                     <div class="card card-wizard" data-color="primary" id="wizardProfile">
-                        <form action="" method="">
+                        <form action="publish.php" method="post" enctype="multipart/form-data">
 
                             <div class="card-header text-center" data-background-color="orange">
                                 <h3 class="card-title">
-                                    Publish a Car
+                                    Publish Wizard
                                 </h3>
 
                                 <h3 class="description">Basic Information</h3>
@@ -193,13 +203,13 @@ if (isset($_SESSION['namex']) && !empty($_SESSION['namex'])) {
                                         </div>
                                     </div>
                                     <div class="tab-pane fade" id="account">
-                                        <h5 class="info-text"> What are you doing? (checkboxes) </h5>
+                                        <h5 class="info-text"> Add the specifications </h5>
                                         <div class="row justify-content-center">
 
                                             <div class="col-sm-12">
                                                 <textarea id="editor" class="form-control"
                                                           name="specs"
-                                                          placeholder="Short Description (required)"></textarea>
+                                                          placeholder="Specifications"></textarea>
                                             </div>
 
                                         </div>
@@ -207,24 +217,24 @@ if (isset($_SESSION['namex']) && !empty($_SESSION['namex'])) {
                                     <div class="tab-pane fade" id="address">
                                         <div class="row justify-content-center">
                                             <div class="col-sm-12">
-                                                <h5 class="info-text"> Are you living in a nice area? </h5>
+                                                <h5 class="info-text"> Select Images for this car </h5>
                                             </div>
                                             <div class="col-sm-10">
-                                                <div class="form-group">
-                                                    <div class="uploader__box js-uploader__box l-center-box">
-                                                        <!--form action="your/nonjs/fallback/" method="POST"-->
-                                                        <div class="uploader__contents">
-                                                            <label class="button button--secondary" for="fileinput">Select
-                                                                images</label>
-                                                            <input id="fileinput" class="uploader__file-input"
-                                                                   type="file" name="fires" multiple
-                                                                   value="Select Files">
-                                                        </div>
-                                                        <input class="button button--big-bottom" type="submit"
-                                                               value="Upload Selected Files">
-                                                        <!--/form-->
-                                                    </div>
+                                                <label for="">Select the Display image</label>
+                                                <select class="selectpickere form-control form-control-lg" id="ioio"
+                                                        data-style="select-with-transition btn-primary btn-round"
+                                                        name="display" title="Display Image" data-size="7">
+
+                                                </select>
+                                                <div class="form-group" style="margin:50px auto;">
+                                                    <label for="exampleInputFile"></label>
+                                                    <input type="file" name="upload[]" id="ghgh" class="demo" multiple
+                                                           data-jpreview-container="#demo-1-container">
                                                 </div>
+                                                <div id="demo-1-container" class="jpreview-container"></div>
+                                                <button type="submit" class="btn btn-round btn-block btn-primary">
+                                                    Publish Car
+                                                </button>
                                             </div>
 
                                         </div>
@@ -236,8 +246,8 @@ if (isset($_SESSION['namex']) && !empty($_SESSION['namex'])) {
                                 <div class="pull-right">
                                     <input type='button' class='btn btn-next btn-fill btn-rose btn-wd' name='next'
                                            value='Next'/>
-                                    <input type='button' class='btn btn-finish btn-fill btn-rose btn-wd' name='finish'
-                                           value='Finish'/>
+                                    <!--input type='button' class='btn btn-finish btn-fill btn-rose btn-wd' name='finish'
+                                           value='Finish'/-->
                                 </div>
 
                                 <div class="pull-left">
@@ -723,14 +733,47 @@ include('include/end.php');
 <script type="text/javascript" src="assets/editor/scripts/uploader.js"></script>
 <script type="text/javascript" src="assets/editor/scripts/hotkeys.js"></script>
 <script type="text/javascript" src="assets/editor/scripts/simditor.js"></script>
+<script src="filer/bootstrap-prettyfile.js"></script>
+<script type="text/javascript" src="filer/jpreview.js"></script>
 <script>
     var editor = new Simditor({
         textarea: $('#editor')
     });
 </script>
 <script>
-    $('#fileinput0').change(function () {
-        console.log("rand");
+    $('#ghgh').change(function () {
+        var files = $('#ghgh').prop("files")
+        var names = $.map(files, function (val) {
+            return val.name;
+        });
+        $("#ioio").html("");
+        console.log(names);
+        names.forEach(function (entry) {
+            $("#ioio").append(`<option value="` + entry + `">` + entry + `</option>`);
+
+        });
+
     });
+
+</script>
+<script>
+    $('input[type="file"]').prettyFile();
+    $('.demo').jPreview();
+</script>
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-36251023-1']);
+    _gaq.push(['_setDomainName', 'jqueryscript.net']);
+    _gaq.push(['_trackPageview']);
+
+    (function () {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+    })();
 
 </script>

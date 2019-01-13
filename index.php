@@ -15,7 +15,8 @@ include('includes/navbar.php');
         <div class="container">
             <div class="row" style="padding-top: 20px">
                 <div class="col-md-8 ml-auto mr-auto text-center">
-                    <img src="assets/img/favicon.png" alt="Circle Image" style="height:180px;width:180px;" class="rounded-circle">
+                    <img src="assets/img/favicon.png" alt="Circle Image" style="height:180px;width:180px;"
+                         class="rounded-circle">
                     <h3 class="title"> Garimax Motors <br> Find the appropriate car for you</h3>
                     <h5 class="description">Explore the vast model range of new and used cars by
                         widely known manufacturers on our website.
@@ -48,7 +49,7 @@ include('includes/navbar.php');
                                                     data-style="select-with-transition btn-primary btn-round"
                                                     title="Select Price Range" data-size="7">
                                                 <option class="text-primary" value="1">Price Range(KSH 1000)</option>
-                                                <option class="text-primary" value="2">100-500 </option>
+                                                <option class="text-primary" value="2">100-500</option>
                                                 <option class="text-primary" value="3">500-1000</option>
                                                 <option class="text-primary" value="3">1000-1500</option>
                                                 <option class="text-primary" value="3">1500-2000</option>
@@ -89,152 +90,70 @@ include('includes/navbar.php');
         <div class="container">
             <h2 class="section-title">Latest Offers</h2>
             <div class="row">
-                <div class="col-md-4">
+                <?php
+                require_once "includes/connect.php";
+                // Create connectionhjh
+                //echo "Connected successfully";
+                $sql = "select * from cars where idx is not NULL LIMIT 6";
+                //echo $sql;
+                $result = $con->query($sql);
+                if ($result->num_rows > 0) {
+                    echo '';
+                    while ($row = $result->fetch_assoc()) {
+                        echo '<div class="col-md-4">
 
-                    <div class="card card-product card-plain">
-                        <div class="card-image">
-                            <img class="img rounded" src="cars/1/i3.jpeg"/>
-                        </div>
+    <div class="card card-product card-plain">
+        <div class="card-image">
+         <a href="product.php?q='.$row["idx"].'">
+            <img class="img rounded" src="dashboard/vehicles/'.$row["idx"].'/'.$row["display"].'"/>
+            </a>
+        </div>
 
-                        <div class="card-body">
-                            <h4 class="card-title">
-                                <a href="#pablo">Toyota Hiace Van</a>
-                            </h4>
-                            <p class="card-description">We offer bank financing
-                                Hire purchase with a maximum duration of 12months
-                            </p>
+        <div class="card-body">
+            <h4 class="card-title">
+                <a href="product.php?q='.$row["idx"].'">'.$row["titlex"].'</a>
+            </h4>
+            <p class="card-description">'.$row["descx"].'
+            </p>
+            '.$row["specsx"].'
+            <div class="card-footer">
+                <div class="price-container">
 
-                            <p>
-                                <button class="btn btn-primary btn-round" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                    <i class="now-ui-icons design_bullet-list-67"></i> Specifications
-                                </button>
-                            <div id="collapseOne" class="collapse hide" aria-labelledby="headingOne" data-parent="#accordionExample">
-                                <div class="card-body">
-                                    <ul class="list-group list-group-flush">
-                                        <li class="list-group-item">3000c diesel</li>
-                                        <li class="list-group-item">2wd</li>
-                                        <li class="list-group-item">KDH201</li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            </p>
-                            <div class="card-footer">
-                                <div class="price-container">
-
-                                    <span class="price price-new"> KSH 2.45M </span>
-                                </div>
-                                <div class="stats stats-right">
-                                    <button type="button" rel="tooltip" title="" class="btn btn-icon btn-neutral"
-                                            data-original-title="Saved to Wishlist">
-                                        <i class="now-ui-icons ui-2_favourite-28"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <span class="price price-new">'. $row["pricex"].' </span>
                 </div>
-                <div class="col-md-4">
-
-                    <div class="card card-product card-plain">
-                        <div class="card-image">
-                            <img class="img rounded" src="cars/2/i9.jpeg"/>
-                        </div>
-
-                        <div class="card-body">
-                            <h4 class="card-title">
-                                <a href="#pablo">BMW 320i </a>
-                            </h4>
-                            <p class="card-description">
-                                2011 model
-                            </p>
-
-                            <p>
-                                <button class="btn btn-primary btn-round" type="button" data-toggle="collapse" data-target="#collapse2" aria-expanded="true" aria-controls="collapseOne">
-                                    <i class="now-ui-icons design_bullet-list-67"></i> Specifications
-                                </button>
-                            <div id="collapse2" class="collapse hide" aria-labelledby="headingOne" data-parent="#accordionExample">
-                                <div class="card-body">
-                                    <ul class="list-group list-group-flush">
-                                        <li class="list-group-item">2000cc petrol</li>
-                                        <li class="list-group-item">2wd</li>
-
-                                    </ul>
-                                </div>
-                            </div>
-
-                            </p>
-                            <div class="card-footer">
-                                <div class="price-container">
-
-                                    <span class="price price-new"> KSH 1.55M </span>
-                                </div>
-                                <div class="stats stats-right">
-                                    <button type="button" rel="tooltip" title="" class="btn btn-icon btn-neutral"
-                                            data-original-title="Saved to Wishlist">
-                                        <i class="now-ui-icons ui-2_favourite-28"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-
-                    <div class="card card-product card-plain">
-                        <div class="card-image">
-                            <img class="img rounded" src="cars/3/i3.jpeg"/>
-                        </div>
-
-                        <div class="card-body">
-                            <h4 class="card-title">
-                                <a href="#pablo">TVW golf tsi </a>
-                            </h4>
-                            <p class="card-description">We offer bank financing
-                                Hire purchase with a maximum duration of 12months
-                            </p>
-
-                            <p>
-                                <button class="btn btn-primary btn-round" type="button" data-toggle="collapse" data-target="#collapse3" aria-expanded="true" aria-controls="collapseOne">
-                                    <i class="now-ui-icons design_bullet-list-67"></i> Specifications
-                                </button>
-                            <div id="collapse3" class="collapse hide" aria-labelledby="headingOne" data-parent="#accordionExample">
-                                <div class="card-body">
-                                    <ul class="list-group list-group-flush">
-                                        <li class="list-group-item">1400cc petrol </li>
-                                        <li class="list-group-item">2wd</li>
-                                        <li class="list-group-item">2012/10</li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            </p>
-                            <div class="card-footer">
-                                <div class="price-container">
-
-                                    <span class="price price-new"> KSH 1.15M </span>
-                                </div>
-                                <div class="stats stats-right">
-                                    <button type="button" rel="tooltip" title="" class="btn btn-icon btn-neutral"
-                                            data-original-title="Saved to Wishlist">
-                                        <i class="now-ui-icons ui-2_favourite-28"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="stats stats-right">
+                    <a href="product.php?q='.$row["idx"].'" rel="tooltip" title="" class="btn btn-icon btn-primary"
+                            data-original-title="View This Car"> 
+                        <i class="now-ui-icons arrows-1_minimal-right"></i>
+                    </a>
                 </div>
             </div>
+        </div>
+    </div>
+</div>';
+                    }
+                    echo '';
+                } else {
+                    echo "Error: " . $sql . "<br>" . $con->error;
+                }
+                $con->close();
+                ?>
+
+
+            </div>
             <div class="row">
-                <div class="col-md-4"> </div>
-                <div class="col-md-4"> <h5><a href="browse.php" class="btn-block btn btn-round btn-primary btn-outline-primary"> view all cars</a></h5></div>
-                <div class="col-md-4"> </div>
+                <div class="col-md-4"></div>
+                <div class="col-md-4"><h5><a href="browse.php"
+                                             class="btn-block btn btn-round btn-primary btn-outline-primary"> view all
+                            cars</a></h5></div>
+                <div class="col-md-4"></div>
             </div>
         </div>
     </div><!-- section -->
 
 
-    <div class="contactus-1 section-image" id="contactx" data-parallax="true" style="background-image: url('assets/img/bgk.jpg')">
+    <div class="contactus-1 section-image" id="contactx" data-parallax="true"
+         style="background-image: url('assets/img/bgk.jpg')">
 
         <div class="container">
             <div class="row">
@@ -278,7 +197,7 @@ include('includes/navbar.php');
                         </div>
                     </div>
                 </div>
-                <div class="col-md-5 ml-auto mr-auto" >
+                <div class="col-md-5 ml-auto mr-auto">
                     <div class="card card-contact card-raised">
                         <form role="form" id="contact-form1" method="post">
                             <div class="card-header text-center">
@@ -290,9 +209,11 @@ include('includes/navbar.php');
                                         <label>First name</label>
                                         <div class="input-group">
                                             <div class="input-group-prepend">
-                                                <span class="input-group-text"><i class="now-ui-icons users_circle-08"></i></span>
+                                                <span class="input-group-text"><i
+                                                            class="now-ui-icons users_circle-08"></i></span>
                                             </div>
-                                            <input type="text" class="form-control" placeholder="First Name..." aria-label="First Name..." autocomplete="given-name">
+                                            <input type="text" class="form-control" placeholder="First Name..."
+                                                   aria-label="First Name..." autocomplete="given-name">
                                         </div>
                                     </div>
                                     <div class="col-md-6 pl-2">
@@ -300,9 +221,11 @@ include('includes/navbar.php');
                                             <label>Last name</label>
                                             <div class="input-group">
                                                 <div class="input-group-prepend">
-                                                    <span class="input-group-text"><i class="now-ui-icons text_caps-small"></i></span>
+                                                    <span class="input-group-text"><i
+                                                                class="now-ui-icons text_caps-small"></i></span>
                                                 </div>
-                                                <input type="text" class="form-control" placeholder="Last Name..." aria-label="Last Name..." autocomplete="family-name">
+                                                <input type="text" class="form-control" placeholder="Last Name..."
+                                                       aria-label="Last Name..." autocomplete="family-name">
                                             </div>
                                         </div>
                                     </div>
@@ -311,9 +234,11 @@ include('includes/navbar.php');
                                     <label>Email address</label>
                                     <div class="input-group">
                                         <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="now-ui-icons ui-1_email-85"></i></span>
+                                            <span class="input-group-text"><i
+                                                        class="now-ui-icons ui-1_email-85"></i></span>
                                         </div>
-                                        <input type="email" class="form-control" placeholder="Email Here..." autocomplete="email">
+                                        <input type="email" class="form-control" placeholder="Email Here..."
+                                               autocomplete="email">
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -324,7 +249,9 @@ include('includes/navbar.php');
                                 <div class="row">
 
                                     <div class="col-md-12">
-                                        <button type="submit" class="btn btn-primary btn-round btn-block pull-right">Send Message</button>
+                                        <button type="submit" class="btn btn-primary btn-round btn-block pull-right">
+                                            Send Message
+                                        </button>
                                     </div>
                                 </div>
                             </div>
