@@ -40,16 +40,28 @@
 
         <ul class="nav">
 
+            <?php
+            if (strpos($_SERVER['REQUEST_URI'], "index.php") !== false) {
+                echo'<li class="active">';
+            }else{
+                echo '<li class="">';
+            }
+            ?>
 
-            <li class="active">
-                <a href="#">
+                <a href="index.php">
                     <i class="now-ui-icons design_app"></i>
                     <p>Publish</p>
                 </a>
 
             </li>
-            <li class="">
-                <a href="#">
+            <?php
+            if (strpos($_SERVER['REQUEST_URI'], "cars.php") !== false) {
+                echo'<li class="active">';
+            }else{
+                echo '<li class="">';
+            }
+            ?>
+                <a href="cars.php">
                     <i class="now-ui-icons shopping_delivery-fast"></i>
                     <p>Cars</p>
                 </a>

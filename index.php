@@ -101,7 +101,7 @@ include('includes/navbar.php');
                     echo '';
                     while ($row = $result->fetch_assoc()) {
                         echo '<div class="col-md-4">
-
+<div data-aos="fade-up">
     <div class="card card-product card-plain">
         <div class="card-image">
          <a href="product.php?q='.$row["idx"].'">
@@ -129,6 +129,7 @@ include('includes/navbar.php');
                 </div>
             </div>
         </div>
+    </div>
     </div>
 </div>';
                     }
@@ -160,6 +161,7 @@ include('includes/navbar.php');
                 <div class="col-md-5">
                     <h2 class="title">Get in Touch</h2>
                     <h4 class="description">You need more information?</h4>
+                    <div data-aos="fade-left">
                     <div class="info info-horizontal">
                         <div class="icon icon-primary">
                             <i class="now-ui-icons location_pin"></i>
@@ -172,6 +174,8 @@ include('includes/navbar.php');
                             </p>
                         </div>
                     </div>
+                    </div>
+                    <div data-aos="fade-left">
                     <div class="info info-horizontal">
                         <div class="icon icon-primary">
                             <i class="now-ui-icons tech_mobile"></i>
@@ -184,6 +188,8 @@ include('includes/navbar.php');
                             </p>
                         </div>
                     </div>
+                    </div>
+                        <div data-aos="fade-left">
                     <div class="info info-horizontal">
                         <div class="icon icon-primary">
                             <i class="now-ui-icons ui-1_send"></i>
@@ -196,8 +202,10 @@ include('includes/navbar.php');
                             </p>
                         </div>
                     </div>
+                        </div>
                 </div>
                 <div class="col-md-5 ml-auto mr-auto">
+                    <div data-aos="fade-left">
                     <div class="card card-contact card-raised">
                         <form role="form" id="contact-form1" method="post">
                             <div class="card-header text-center">
@@ -258,6 +266,7 @@ include('includes/navbar.php');
 
                         </form>
                     </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -276,4 +285,5 @@ include('includes/footer.php');
 include('includes/end.php');
 
 ?>
+
 

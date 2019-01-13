@@ -87,6 +87,7 @@ With a robust selection of popular vehicles on hand, as well as leading vehicles
     <link href="./assets/css/bootstrap.min.css" rel="stylesheet"/>
     <!-- NOW UI Kit CSS -->
     <link rel="stylesheet" href="./assets/css/now-ui-kit.min.css">
+    <link rel="stylesheet" href="./assets/aos.css">
     <!--Start of Tawk.to Script-->
     <script type="text/javascript">
         var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();

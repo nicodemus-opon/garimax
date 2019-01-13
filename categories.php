@@ -61,6 +61,7 @@ if ($result->num_rows > 0) {
                 $gg=0;
                 while ($row = $result->fetch_assoc()) {
                     echo '<div class="col-md-4">
+<div data-aos="fade-up">
                 <div class="card  bg-transparent">
                     <div class="card-image">
                     <a href="browse.php?q='.$row["categoryx"].'">
@@ -72,6 +73,7 @@ if ($result->num_rows > 0) {
                         <a href="browse.php?q='.$row["categoryx"].'" class="info-title text-white">' . $row["categoryx"] .' ('.$totals[$gg].')'. '</a>
                        </h5>
                     </div>
+                </div>
                 </div>
             </div>';
                     $gg+=1;

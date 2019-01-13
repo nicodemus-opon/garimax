@@ -47,8 +47,8 @@ $files = scandir($d);
     <div class="section">
         <div class="container">
             <div class="row">
-                <div class="col-md-5">
-
+                <div class="col-md-6">
+                    <div data-aos="fade-right">
                     <div id="productCarousel" class="carousel slide" data-ride="carousel" data-interval="100">
                         <ol class="carousel-indicators">
                             <?php
@@ -103,19 +103,22 @@ $files = scandir($d);
                             </button>
                         </a>
                     </div>
-
+                    </div>
                 </div>
                 <div class="col-md-6 ml-auto mr-auto">
+                    <div data-aos="fade-left">
                     <h2 class="title"> <?php
                         echo $titlex;
                         ?> </h2>
+                    </div>
                     <h5 class="category"><?php
                         echo $categoryx;
                         ?></h5>
+                    <div data-aos="fade-up">
                     <h3 class="main-price">KSH. <?php
                         echo $pricex;
                         ?></h3>
-
+                    </div>
                     <div id="accordion" role="tablist" aria-multiselectable="true" class="card-collapse">
                         <div class="card card-plain">
                             <div class="card-header" role="tab" id="headingOne">
@@ -164,6 +167,10 @@ $files = scandir($d);
     </div>
 
 </div>
+<?php
+include('includes/footer.php');
+
+?>
 <?php
 include('includes/end.php');
 
