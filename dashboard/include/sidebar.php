@@ -55,7 +55,7 @@
 
             </li>
             <?php
-            if (strpos($_SERVER['REQUEST_URI'], "cars.php") !== false) {
+            if (strpos($_SERVER['REQUEST_URI'], "cars") !== false) {
                 echo'<li class="active">';
             }else{
                 echo '<li class="">';

@@ -12,7 +12,7 @@
         <nav>
             <ul>
                 <li>
-                    <a href="#">
+                    <a href="./">
                         Home
                     </a>
                 </li>

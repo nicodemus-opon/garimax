@@ -1,7 +1,41 @@
 <?php
+/*
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);*/
 include('includes/head.php');
 include('includes/navbar.php');
+$files = scandir("assets/bgs");
+//print_r($files);
+$rr = mt_rand(3, 6);
+//echo $files[$rr];
+include "includes/connect.php";
+$dets = array();
+$totals = array();
+$sql = "select DISTINCT categoryx from cars ";
+$result = $con->query($sql);
+
+if ($result->num_rows > 0) {
+    //echo '';
+    while ($row = $result->fetch_assoc()) {
+        $sqly = "select * from cars where categoryx='" . $row["categoryx"] . "' LIMIT 1";
+        $resultx = $con->query($sqly);
+        while ($rowx = $resultx->fetch_assoc()) {
+            $dirr = $rowx["idx"] . '/' . $rowx["display"];
+            array_push($dets, $dirr);
+        }
+        $sq = "SELECT COUNT(idx) FROM cars where categoryx='" . $row["categoryx"] . "'";
+        $resul = $con->query($sq);
+        while ($ro = $resul->fetch_assoc()) {
+            //print_r($ro);
+            $di = $ro["COUNT(idx)"];
+            array_push($totals, $di);
+        }
+
+    }
+}
 ?>
+<meta property="og:image" content="assets/img/favicon.png">
 <!-- Google Tag Manager (noscript) -->
 <noscript>
     <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NKDMSK6"
@@ -11,7 +45,8 @@ include('includes/navbar.php');
 
 <div class="wrapper">
     <div class="page-header header-filter">
-        <div class="page-header-image" data-parallax="true" style="background-image: url('assets/img/bgk.jpg');"></div>
+        <div class="page-header-image" data-parallax="true" tadoe="assets/img/bg3.jpg"
+             style="background-image: url('<?php echo "assets/bgs/" . $files[$rr]; ?>');"></div>
         <div class="container">
             <div class="row" style="padding-top: 20px">
                 <div class="col-md-8 ml-auto mr-auto text-center">
@@ -84,32 +119,32 @@ include('includes/navbar.php');
     </div>
 
 </div>
-<div class="main">
+<div class="main" style="">
 
-    <div class="section">
+    <div class="section" style="">
         <div class="container">
-            <h2 class="section-title">Latest Offers</h2>
+            <h2 class="section-title ">Latest Offers</h2>
             <div class="row">
                 <?php
-                require_once "includes/connect.php";
+
                 // Create connectionhjh
                 //echo "Connected successfully";
-                $sql = "select * from cars where idx is not NULL LIMIT 6";
+                $sql = "select * from cars where idx is not NULL LIMIT 16";
                 //echo $sql;
                 $result = $con->query($sql);
                 if ($result->num_rows > 0) {
                     echo '';
                     while ($row = $result->fetch_assoc()) {
-                        echo '<div class="col-md-4">
-<div data-aos="fade-up" data-aos-duration="1000">
-    <div class="card card-product card-plain">
-        <div class="card-image">
+                        echo '<div class="col-md-4 hvr-float">
+<div data-aos="fade-up" " >
+    <div class="card card-product card-plainx ">
+        <!--div class="card-image"-->
          <a href="product.php?q=' . $row["idx"] . '">
-            <img class="img rounded" src="dashboard/vehicles/' . $row["idx"] . '/' . $row["display"] . '"/>
+            <img class="img rounded card-img-top " src="dashboard/vehicles/' . $row["idx"] . '/' . $row["display"] . '"/>
             </a>
-        </div>
+        <!--/div-->
 
-        <div class="card-body">
+        <div class="card-body hvr-floatn">
             <h4 class="card-title">
                 <a href="product.php?q=' . $row["idx"] . '">' . $row["titlex"] . '</a>
             </h4>
@@ -122,7 +157,7 @@ include('includes/navbar.php');
                     <span class="price price-new"> KSH. ' . $row["pricex"] . ' </span>
                 </div>
                 <div class="stats stats-right">
-                    <a href="product.php?q=' . $row["idx"] . '" rel="tooltip" title="" class="btn btn-icon btn-primary"
+                    <a href="product.php?q=' . $row["idx"] . '" rel="tooltip" title="" class="btn  btn-icon btn-primary "
                             data-original-title="View This Car"> 
                         <i class="now-ui-icons arrows-1_minimal-right"></i>
                     </a>
@@ -135,23 +170,134 @@ include('includes/navbar.php');
                     }
                     echo '';
                 } else {
-                    echo "Error: " . $sql . "<br>" . $con->error;
+                    //echo "Error: " . $sql . "<br>" . $con->error;
+                    echo '';
                 }
                 $con->close();
+
                 ?>
 
 
             </div>
             <div class="row">
                 <div class="col-md-4"></div>
-                <div class="col-md-4"><h5><a href="browse.php"
+                <div class="col-md-4"><div data-aos="zoom-in-up"><h5>
+                        <a href="browse.php"
                                              class="btn-block btn btn-round btn-primary btn-outline-primary"> view all
-                            cars</a></h5></div>
+                            cars</a>
+                    </h5></div></div>
                 <div class="col-md-4"></div>
             </div>
         </div>
     </div><!-- section -->
+    <div>
+        <div class="container">
 
+            <div class="row justify-content-centerw">
+                <div class="col-md-5">
+                    <div class="title ">
+                        <h3>Manufacturer</h3>
+                    </div>
+                    <!--h7-->
+                    <div class="card">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Cras justo odio</li>
+                            <li class="list-group-item">Dapibus ac facilisis in</li>
+                            <li class="list-group-item">Vestibulum at eros</li>
+                        </ul>
+                    </div>
+                    <!--/h7-->
+                </div>
+                <?php
+                include "includes/connect.php";
+                $sql = "select * from cars ORDER BY RAND() LIMIT 6;";
+                $result = $con->query($sql);
+                $arrmgs = [];
+                $arrprice = [];
+                $arrtxts = [];
+                $arrlinks = [];
+                if ($result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                        $full = 'dashboard/vehicles/' . $row["idx"] . '/' . $row["display"];
+                        $txts = $row["titlex"];
+                        array_push($arrmgs, $full);
+                        array_push($arrtxts, $txts);
+                        array_push($arrprice, $row["pricex"]);
+                        array_push($arrlinks, $row["idx"]);
+                    }
+                }
+                ?>
+                <div class="col-lg-7 col-md-12">
+                    <div class="title ">
+                        <h3>Recommended for You</h3>
+                    </div>
+                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="100">
+                        <ol class="carousel-indicators">
+                            <!--li data-target="#carouselExampleIndicators" data-slide-to="0" class=""></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="1" class="active"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="2" class=""></li-->
+                            <?php
+                            $s = 0;
+                            foreach ($arrtxts as $f) {
+                                //echo $fi;
+                                if ($y === 0) {
+                                    echo '<li data-target="#carouselExampleIndicators" data-slide-to="' . $s . '" class="active"></li>';
+                                } else {
+                                    echo '<li data-target="#carouselExampleIndicators" data-slide-to="' . $s . '"></li>';
+                                }
+                                $s += 1;
+                            }
+                            ?>
+                        </ol>
+                        <div class="carousel-inner" role="listbox">
+                            <?php
+                            $y = 0;
+                            foreach ($arrtxts as $fi) {
+                                if ($y === 0) {
+                                    echo '<div class="carousel-item active card-background">
+                                <img class="d-block" src="' . $arrmgs[$y] . '" alt="First slide">
+                                <div class="carousel-caption  footer-link stats-link d-md-block">
+                                <a href="product.php?q=' . $arrlinks[$y] . '" class="text-white">
+                                    <h4>' . $arrtxts[$y] . '</h4>
+                                    <span> <i class="now-ui-icons business_money-coins"></i>' . ' ' . $arrprice[$y] . '</span>
+                                    </a>
+                                    
+                                </div>
+                            </div>';
+                                } else {
+                                    echo '<div class="carousel-item card-background">
+                                <img class="d-block" src="' . $arrmgs[$y] . '" alt="First slide">
+                                <div class="carousel-caption d-md-block">
+                                    <a href="product.php?q=' . $arrlinks[$y] . '" class="text-white">
+                                    <h4>' . $arrtxts[$y] . '</h4>
+                                    <span> <i class="now-ui-icons business_money-coins"></i>' . ' ' . $arrprice[$y] . '</span>
+                                    </a>
+                                </div>
+                            </div>';
+                                }
+                                $y += 1;
+                            }
+                            ?>
+
+
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button"
+                           data-slide="prev">
+                            <i class="now-ui-icons arrows-1_minimal-left"></i>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button"
+                           data-slide="next">
+                            <i class="now-ui-icons arrows-1_minimal-right"></i>
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <p></p>
+        <p></p>
+    </div>
 
     <div class="contactus-1 section-image" id="contactx"
          style="background-image: url('assets/img/bgk.jpg')">

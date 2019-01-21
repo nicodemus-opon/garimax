@@ -1,7 +1,7 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+//ini_set('display_errors', 1);
+//ini_set('display_startup_errors', 1);
+//error_reporting(E_ALL);
 require '../includes/connect.php';
 //http://localhost/garimax/dashboard/?title=&shortdesc=&price=&category=&specs=&imgs=img13.jpeg&imgs=img17.jpeg
 $title = $_POST['title'];
@@ -15,7 +15,7 @@ $files = array_filter($_FILES['upload']['name']); //something like that to be us
 //echo json_encode($_FILES);
 // Count # of uploaded files in array
 $total = count($_FILES['upload']['name']);
-echo $total;
+//echo $total;
 
 /*
 if ($_FILES['upload']) {
@@ -32,7 +32,7 @@ if ($_FILES['upload']) {
 }*/
 $gy= mt_rand(000000, 999999);
 $folder=$category."$gy";
-echo $folder;
+//echo $folder;
 // Loop through each file
 for ($i = 0; $i < $total; $i++) {
     $dir = "vehicles/".$folder."/";
@@ -54,13 +54,13 @@ for ($i = 0; $i < $total; $i++) {
 }
 $id=$folder;
 $sql = "insert into cars values ('" . $id . "','" . $title . "','" . $shortdesc ."','" . $category ."','" . $price ."','" . $specs ."','" .$display."');";
-echo $sql;
+//echo $sql;
 if ($con->query($sql) === true) {
-    echo 'socsesss';
+    //echo 'socsesss';
 }else{
-    echo 'uh-ooooh';
+    //echo 'uh-ooooh';
 }
-header("Location:index.php");
+header("Location:cars.php");
 exit();
 ?>
 

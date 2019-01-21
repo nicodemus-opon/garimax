@@ -2,7 +2,7 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
- ?>
+?>
 <?php
 include('includes/head.php');
 include('includes/navbar.php');
@@ -11,28 +11,27 @@ include('includes/navbar.php');
 
 <?php
 require "includes/connect.php";
-$dets=array();
-$totals=array();
+$dets = array();
+$totals = array();
 $sql = "select DISTINCT categoryx from cars ";
 $result = $con->query($sql);
 
 if ($result->num_rows > 0) {
     //echo '';
     while ($row = $result->fetch_assoc()) {
-        $sqly = "select * from cars where categoryx='".$row["categoryx"]."' LIMIT 1";
+        $sqly = "select * from cars where categoryx='" . $row["categoryx"] . "' LIMIT 1";
         $resultx = $con->query($sqly);
         while ($rowx = $resultx->fetch_assoc()) {
-            $dirr=$rowx["idx"].'/'.$rowx["display"];
-            array_push($dets,$dirr);
+            $dirr = $rowx["idx"] . '/' . $rowx["display"];
+            array_push($dets, $dirr);
         }
-        $sq = "SELECT COUNT(idx) FROM cars where categoryx='".$row["categoryx"]."'";
+        $sq = "SELECT COUNT(idx) FROM cars where categoryx='" . $row["categoryx"] . "'";
         $resul = $con->query($sq);
         while ($ro = $resul->fetch_assoc()) {
             //print_r($ro);
-            $di=$ro["COUNT(idx)"];
-            array_push($totals,$di);
+            $di = $ro["COUNT(idx)"];
+            array_push($totals, $di);
         }
-
 
     }
 }
@@ -58,30 +57,27 @@ if ($result->num_rows > 0) {
             $result = $con->query($sql);
             if ($result->num_rows > 0) {
                 echo '';
-                $gg=0;
+                $gg = 0;
                 while ($row = $result->fetch_assoc()) {
                     echo '<div class="col-md-4">
 <div data-aos="fade-up">
                 <div class="card  bg-transparent">
                     <div class="card-image">
-                    <a href="browse.php?q='.$row["categoryx"].'">
-                        <img src="dashboard/vehicles/'.$dets[$gg].'" class="rounded" alt="">
+                    <a href="browse.php?q=' . $row["categoryx"] . '">
+                        <img src="dashboard/vehicles/' . $dets[$gg] . '" class="rounded" alt="">
                         </a>
                     </div>
                     <div class="info text-center">
                     <h5>
-                        <a href="browse.php?q='.$row["categoryx"].'" class="info-title text-white">' . $row["categoryx"] .' ('.$totals[$gg].')'. '</a>
+                        <a href="browse.php?q=' . $row["categoryx"] . '" class="info-title text-white">' . $row["categoryx"] . ' (' . $totals[$gg] . ')' . '</a>
                        </h5>
                     </div>
                 </div>
                 </div>
             </div>';
-                    $gg+=1;
+                    $gg += 1;
                 }
             } ?>
-
-
-
 
         </div>
     </div>

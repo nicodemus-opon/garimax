@@ -21,7 +21,7 @@
 
                 <li class="nav-item dropdown">
                     <a href="index.php" class="nav-link dropdown-togglev" id="navbarDropdownMenuLink1" >
-                        <i class="now-ui-icons shopping_shop"></i>
+                        <i class="now-ui-icons arrows-1_minimal-left"></i>
                         <p>HOME</p>
                     </a>
 

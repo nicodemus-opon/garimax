@@ -10,7 +10,24 @@ include('include/head.php');
 include('include/sidebar.php');
 include_once('../includes/connect.php');
 
+$sql = "select * from cars where idx='" . $_GET["id"] . "'";
+//echo $sql;
+$result = $con->query($sql);
+if ($result->num_rows > 0) {
 
+    while ($row = $result->fetch_assoc()) {
+        $idd=$row["idx"];
+        $titlex = $row["titlex"];
+        $descx = $row["descx"];
+        $pricex = $row["pricex"];
+        $categoryx = $row["categoryx"];
+        $specsx = $row["specsx"];
+    }
+
+} else {
+    echo "Error: " . $sql . "<br>" . $con->error;
+}
+//$con->close();
 ?>
 <link href="dist/styles.imageuploader.css" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="assets/editor/styles/simditor.css"/>
@@ -95,86 +112,105 @@ include_once('../includes/connect.php');
     <div class="panel-header panel-header-sm">
 
     </div>
-
-
     <div class="content">
         <div class="row">
-            <div class="col-md-12">
-                <div class="card">
-                    <div class="card-header">
-                        <h4 class="card-title">Update Car Details</h4>
-                    </div>
-                    <div class="card-body">
-                        <div class="row justify-content-center">
-                            <div class="col-sm-10">
-                                <div class="form-group">
-                                    <div class="input-group form-control-lg">
-                                        <div class="input-group-prepend">
-                                            <div class="input-group-text">
-                                                <i class="now-ui-icons text_align-left"></i>
-                                            </div>
-                                        </div>
-                                        <input type="text" class="form-control"
-                                               placeholder="Title (required)" name="title">
-                                    </div>
-                                    <div class="input-group form-control-lg">
-                                        <!--label>Short Description</label-->
-                                        <textarea class="form-control" name="shortdesc"
-                                                  placeholder="Short Description (required)"></textarea>
-                                        <!--input type="text" placeholder="Short Description (required)"
-                                               class="form-control" name="lastname"/-->
-                                    </div>
-                                </div>
-                            </div>
+            <form method="post" action="update.php">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title"><a class="btn btn-primary btn-round" href="cars.php">
+                                    <i class="now-ui-icons arrows-1_minimal-left"></i> Back
+                                </a></h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="row justify-content-center">
+                                <div class="col-sm-10">
+                                    <label>Title</label>
+                                    <div class="form-group">
 
-                            <div class="col-lg-5">
-                                <div class="form-group">
-                                    <label>Price (Ksh)</label>
-                                    <input type="text" name="price" class="form-control">
+                                        <div class="input-group form-control-lg">
+                                            <div class="input-group-prepend">
+                                                <div class="input-group-text">
+                                                    <i class="now-ui-icons text_align-left"></i>
+                                                </div>
+                                            </div>
+                                            <input type="text" class="form-control"
+                                                   placeholder="Title (required)" value="<?php
+                                            echo $titlex;
+                                            ?>" name="title">
+
+                                        </div>
+                                        <label>Short Description</label>
+                                        <div class="input-group form-control-lg">
+
+                                            <textarea class="form-control" name="shortdesc"
+                                                      placeholder="Short Description (required)"><?php
+                                                echo $descx;
+                                                ?></textarea>
+                                            <!--input type="text" placeholder="Short Description (required)"
+                                                   class="form-control" name="lastname"/-->
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-lg-5">
-                                <div class="form-group">
-                                    <label>Category (Body Type)</label>
-                                    <select name="category" class="selectpicker" data-size="7"
-                                            data-style="btn btn-primary btn-round"
-                                            title="Category">
-                                        <?php
-                                        require_once "../includes/connect.php";
-                                        // Create connectionhjh
-                                        //echo "Connected successfully";
-                                        $sql = "select * from categories where namex is not NULL ";
-                                        //echo $sql;
-                                        $result = $con->query($sql);
-                                        if ($result->num_rows > 0) {
-                                            echo '<div class="list-group">';
-                                            while ($row = $result->fetch_assoc()) {
-                                                echo '<option value="' . $row["namex"] . '">' . $row["namex"] . '</option>';
+                                <br>
+                                <div class="col-lg-5">
+                                    <div class="form-group">
+                                        <label>Price</label>
+                                        <input type="text" name="price" value="<?php
+                                        echo $pricex;
+                                        ?>"class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-lg-5">
+                                    <div class="form-group">
+                                        <label>Category (Body Type)</label>
+                                        <select name="category" class="selectpicker" data-size="7"
+                                                data-style="btn btn-primary btn-round"
+                                                title="<?php echo $categoryx ; ?>">
+                                            <?php
+
+                                            // Create connectionhjh
+                                            //echo "Connected successfully";
+                                            $sql = "select * from categories where namex is not NULL ";
+                                            //echo $sql;
+                                            $result = $con->query($sql);
+                                            if ($result->num_rows > 0) {
+                                                echo '<div class="list-group">';
+                                                while ($row = $result->fetch_assoc()) {
+                                                    echo '<option value="' . $row["namex"] . '">' . $row["namex"] . '</option>';
+                                                }
+                                                echo '</div>';
+                                            } else {
+                                                echo "Error: " . $sql . "<br>" . $con->error;
                                             }
-                                            echo '</div>';
-                                        } else {
-                                            echo "Error: " . $sql . "<br>" . $con->error;
-                                        }
-                                        $con->close();
-                                        ?>
-                                    </select>
+                                            $con->close();
+                                            ?>
+                                        </select>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-lg-10">
-                                <div class="form-group">
+
+                                <div class="col-lg-10">
+                                    <label>Specifications</label>
+                                    <div class="form-group">
                             <textarea id="editor" class="form-control"
                                       name="specs"
-                                      placeholder="Specifications"></textarea>
+                                      placeholder="Specifications"><?php
+                                echo $specsx;
+                                ?></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-lg-10">
+                                    <button type="submit" class="btn btn-round btn-primary btn-block">Update
+                                    </button>
+                                    <input type="text" id="idd" name="idd" value="<?php
+                                    echo $idd;
+                                    ?>"class="form-control">
                                 </div>
                             </div>
-                            <div class="col-lg-10">
-                                <button type="submit" class="btn btn-round btn-primary btn-block">Update
-                                </button>
-                            </div>
-                        </div>
-                    </div><!-- end content-->
-                </div><!--  end card  -->
-            </div> <!-- end col-md-12 -->
+                        </div><!-- end content-->
+                    </div><!--  end card  -->
+                </div>
+            </form><!-- end col-md-12 -->
         </div> <!-- end row -->
 
     </div>
@@ -196,6 +232,7 @@ include('include/end.php');
 <script src="filer/bootstrap-prettyfile.js"></script>
 <script type="text/javascript" src="filer/jpreview.js"></script>
 <script>
+    $("#idd").hide();
     var editor = new Simditor({
         textarea: $('#editor')
     });

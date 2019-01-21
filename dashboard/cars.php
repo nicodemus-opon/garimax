@@ -97,7 +97,8 @@ include_once('../includes/connect.php');
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title">Cars</h4>
+                        <h4 class="card-title">Cars Table
+                        </h4>
                     </div>
                     <div class="card-body">
 
@@ -142,8 +143,9 @@ include_once('../includes/connect.php');
                                         <a href=<?php echo "'cars-update.php?id=" . $row['idx'] . "'"; ?> class="btn
                                            btn-round btn-primary btn-icon btn-sm "><i
                                                 class="now-ui-icons design-2_ruler-pencil"></i></a>
-                                        <a href=<?php echo "'cars-delete.php?id=" . $row['idx'] . "'"; ?> class="btn
-                                           btn-round btn-primary btn-icon btn-sm "><i
+                                        <a onclick="return confirm('Are you sure you want to delete <?php echo $row['titlex'] ; ?>');"
+                                           href=<?php echo "'cars-delete.php?id=" . $row['idx'] . "'"; ?> class="btn
+                                           btn-round btn-danger btn-icon btn-sm "><i
                                                 class="now-ui-icons ui-1_simple-remove"></i></a>
 
                                         <!--/div-->

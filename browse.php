@@ -8,18 +8,17 @@
 <?php
 include('includes/head.php');
 include('includes/navbar.php');
+include('includes/connect.php');
 ?>
 <div class="main">
     <div class="section">
         <div class="container">
-            <h2 class="section-title">Find what you need</h2>
-            <div class="container">
+            <h4 class="section-title">Browse Cars</h4>
+            <!--div class="container">
                 <div class="row">
                     <div class="col-md-9">
                         <div class="form-group input-group-lg " style="padding-top: 10px">
-                            <!--div class="input-group-prepend ">
-                                                <div class="input-group-text"><i class="now-ui-icons ui-1_zoom-bold"></i></div>
-                                            </div-->
+
                             <input type="text" placeholder="Search Text..." class="form-control"
                                    autocomplete="current-password"/>
                         </div>
@@ -29,15 +28,14 @@ include('includes/navbar.php');
                                autocomplete=""/>
                     </div>
 
-
                     <div class="col-1h">
 
                     </div>
                 </div>
-            </div>
+            </div-->
 
             <div class="row">
-                <div class="col-md-3">
+                <div class="col-md-2">
                     <div class="collapse-panel">
                         <div class="card-body">
                             <div class="card card-refine card-plain">
@@ -76,7 +74,7 @@ include('includes/navbar.php');
                                     <h6>
                                         <a class="collapsed" data-toggle="collapse" data-parent="#accordion"
                                            href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                            Clothing
+                                            Category (Body Type)
 
                                             <i class="now-ui-icons arrows-1_minimal-down"></i>
                                         </a>
@@ -84,147 +82,30 @@ include('includes/navbar.php');
                                 </div>
                                 <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
                                     <div class="card-body">
+                                        <?php
 
-                                        <div class="form-check">
-                                            <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox" checked>
-                                                <span class="form-check-sign"></span>
-                                                Casual Shirts
-                                            </label>
-                                        </div>
+                                        // Create connectionhjh
+                                        //echo "Connected successfully";
+                                        $sql = "select * from categories where namex is not NULL ";
+                                        //echo $sql;
+                                        $result = $con->query($sql);
+                                        if ($result->num_rows > 0) {
 
-                                        <div class="form-check">
+                                            while ($row = $result->fetch_assoc()) {
+                                                echo ' <div class="form-check">
                                             <label class="form-check-label">
                                                 <input class="form-check-input" type="checkbox">
-                                                <span class="form-check-sign"></span>
-                                                Formal Shirts
+                                                <span class="form-check-sign"></span>' . $row["namex"] . '
+                                                
                                             </label>
-                                        </div>
+                                        </div>';
+                                            }
 
-                                        <div class="form-check">
-                                            <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox" checked>
-                                                <span class="form-check-sign"></span>
-                                                Jeans
-                                            </label>
-                                        </div>
+                                        } else {
+                                            echo "Error: " . $sql . "<br>" . $con->error;
+                                        }
 
-                                        <div class="form-check">
-                                            <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox">
-                                                <span class="form-check-sign"></span>
-                                                Polos
-                                            </label>
-                                        </div>
-
-                                        <div class="form-check">
-                                            <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox" checked>
-                                                <span class="form-check-sign"></span>
-                                                Pijamas
-                                            </label>
-                                        </div>
-
-                                        <div class="form-check">
-                                            <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox">
-                                                <span class="form-check-sign"></span>
-                                                Shorts
-                                            </label>
-                                        </div>
-
-                                        <div class="form-check">
-                                            <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox">
-                                                <span class="form-check-sign"></span>
-                                                Blazers
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card card-refine card-plain">
-                                <div class="card-header" role="tab" id="headingThree">
-                                    <h6>
-                                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion"
-                                           href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                            Designer
-
-                                            <i class="now-ui-icons arrows-1_minimal-down"></i>
-                                        </a>
-                                    </h6>
-                                </div>
-                                <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">
-                                    <div class="card-body">
-                                        <div class="form-check">
-                                            <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox">
-                                                <span class="form-check-sign"></span>
-                                                All
-                                            </label>
-                                        </div>
-                                        <div class="form-check">
-                                            <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox">
-                                                <span class="form-check-sign"></span>
-                                                Polo Ralph Lauren
-                                            </label>
-                                        </div>
-
-                                        <div class="form-check">
-                                            <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox">
-                                                <span class="form-check-sign"></span>
-                                                Wooyoungmi
-                                            </label>
-                                        </div>
-
-                                        <div class="form-check">
-                                            <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox">
-                                                <span class="form-check-sign"></span>
-                                                Alexander McQueen
-                                            </label>
-                                        </div>
-                                        <div class="form-check">
-                                            <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox">
-                                                <span class="form-check-sign"></span>
-                                                Tom Ford
-                                            </label>
-                                        </div>
-
-                                        <div class="form-check">
-                                            <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox">
-                                                <span class="form-check-sign"></span>
-                                                AMI
-                                            </label>
-                                        </div>
-
-                                        <div class="form-check">
-                                            <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox">
-                                                <span class="form-check-sign"></span>
-                                                Berena
-                                            </label>
-                                        </div>
-
-                                        <div class="form-check">
-                                            <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox">
-                                                <span class="form-check-sign"></span>
-                                                Thom Sweeney
-                                            </label>
-                                        </div>
-
-                                        <div class="form-check">
-                                            <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox">
-                                                <span class="form-check-sign"></span>
-                                                Calvin Klein
-                                            </label>
-                                        </div>
+                                        ?>
 
 
                                     </div>
@@ -300,10 +181,11 @@ include('includes/navbar.php');
                     </div>
                 </div>
 
-                <div class="col-md-9">
+                <div class="col-md-10">
                     <div class="row">
+
                         <?php
-                        require_once "includes/connect.php";
+                        //require_once "includes/connect.php";
                         // Create connectionhjh
                         //echo "Connected successfully";
                         $sql = "select * from cars where idx is not NULL ";
@@ -312,44 +194,41 @@ include('includes/navbar.php');
                         if ($result->num_rows > 0) {
                             echo '';
                             while ($row = $result->fetch_assoc()) {
-                                echo '<div class="col-lg-4 col-md-6">
-<div data-aos="fade-up" data-aos-duration="2000">
-                            <div class="card card-product card-plain">
-                                <div class="card-image">
-                                    <a href="product.php?q='.$row["idx"].'">
-                                        <img src="dashboard/vehicles/'.$row["idx"].'/'.$row["display"].'" alt="..."/>
-                                    </a>
-                                </div>
+                                echo '<div class="col-md-6">
+
+                            <div class="card card-background hvr-float" style="background-image: url(\'dashboard/vehicles/' . $row["idx"] . '/' . $row["display"] . '\')">
+
                                 <div class="card-body">
-                                    <a href="product.php?q='.$row["idx"].'">
-                                        <h4 class="card-title">'.$row["titlex"].'</h4>
-                                    </a>
-                                    <p class="card-description">
-                                        '.$row["descx"].'
-                                    </p>
-                                    <div class="card-footer">
-                                        <div class="price-container">
-                                            <span class="price"> KSH. '.$row["pricex"].'</span>
-                                        </div>
-<div class="stats stats-right">
-                                        <a href="product.php?q='.$row["idx"].'" rel="tooltip" title="" class="btn btn-icon btn-primary"
-                            data-original-title="View This Car"> 
-                        <i class="now-ui-icons arrows-1_minimal-right"></i>
-                    </a>
+                                    <div class="card-title text-left">
+                                        <h3>' . $row["titlex"] . '</h3>
+                                        <h7>' . $row["descx"] . '</h7>
                                     </div>
+
+                                    <div class="card-footer text-left">
+                                        <div class="stats">
+											<span>
+												<i class="now-ui-icons business_money-coins"></i>' . $row["pricex"] . '
+											</span>
+
+
+                                        </div>
+
+                                        <div class="stats-link pull-right">
+                                            <a href="product.php?q=' . $row["idx"] . '" class="footer-link">View this car </a>
+                                        </div>
                                     </div>
                                 </div>
-                            </div> <!-- end card -->
-                        </div></div>';
+                            </div>
+                        </div>';
 
 
                             }
                         } ?>
 
 
-                        <div class="col-md-3 ml-auto mr-auto">
+                        <!--div class="col-md-3 ml-auto mr-auto">
                             <button rel="tooltip" class="btn btn-primary btn-block btn-round">Load more...</button>
-                        </div>
+                        </div-->
                     </div>
                 </div>
             </div>
@@ -375,5 +254,31 @@ include('includes/end.php');
         $("nav").removeAttr("color-on-scroll")
         $(".ccc").removeClass("btn-neutral ");
         $(".ccc").addClass("btn-primary");
+    });
+</script>
+<script>
+    $(document).ready(function () {
+
+        var slider2 = document.getElementById('sliderRefine');
+
+        noUiSlider.create(slider2, {
+            start: [42, 880],
+            connect: true,
+            range: {
+                'min': [30],
+                'max': [900]
+            }
+        });
+
+        var limitFieldMin = document.getElementById('price-left');
+        var limitFieldMax = document.getElementById('price-right');
+
+        slider2.noUiSlider.on('update', function (values, handle) {
+            if (handle) {
+                limitFieldMax.innerHTML = $('#price-right').data('currency') + Math.round(values[handle]);
+            } else {
+                limitFieldMin.innerHTML = $('#price-left').data('currency') + Math.round(values[handle]);
+            }
+        });
     });
 </script>
