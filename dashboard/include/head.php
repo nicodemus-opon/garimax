@@ -77,11 +77,8 @@ error_reporting(E_ALL);
 
     <link href="./assets/css/bootstrap.min.css" rel="stylesheet"/>
 
-
     <link href="./assets/css/now-ui-dashboard.min.css?v=1.1.0" rel="stylesheet"/>
 
-
-    <!-- CSS Just for demo purpose, don't include it in your project -->
     <link href="./assets/demo/demo.css" rel="stylesheet"/>
 
     <!-- Google Tag Manager -->

@@ -17,12 +17,12 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="aboutus.php">
                         About Us
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="blog.php">
                         Blog
                     </a>
                 </li>

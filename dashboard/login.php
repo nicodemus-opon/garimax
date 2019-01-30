@@ -29,7 +29,6 @@ include('include/head.php');
 </nav>
 <!-- End Navbar -->
 
-
 <div class="wrapper wrapper-full-page ">
     <div class="full-page login-page section-image" filter-color="black" data-image="assets/img/"
          style="background-image: url('../assets/img/bgk.jpg');">

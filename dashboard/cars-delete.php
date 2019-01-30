@@ -1,18 +1,31 @@
 <?php
-require '../includes/connect.php';
+if (isset($_SESSION['namex']) && !empty($_SESSION['namex'])) {
+    require '../includes/connect.php';
 //http://localhost/garimax/dashboard/?title=&shortdesc=&price=&category=&specs=&imgs=img13.jpeg&imgs=img17.jpeg
-$ti = $_GET['id'];
+    $ti = $_GET['id'];
 
 
-//echo "categ is empty";
-$sql = 'DELETE FROM `cars` WHERE idx="'.$ti.'"';
+    $sql = 'DELETE FROM `cars` WHERE idx="' . $ti . '"';
 
-//echo $sql;
-if ($con->query($sql) === true) {
-    //echo 'socsesss';
+
+    if ($con->query($sql) === true) {
+
+    } else {
+
+    }
+    $pp = "vehicles/" . $ti . "/*";
+//echo $pp;
+    $files = glob($pp);
+    foreach ($files as $file) {
+        if (is_file($file))
+            unlink($file);
+    }
+
+    header("Location:cars.php");
+    exit();
 } else {
-    //echo 'uh-ooooh'.$con->error;
+    echo "<script type='text/javascript'> document.location = 'logout.php'; </script>";
 }
-header("Location:cars.php");
-exit();
+
+
 ?>

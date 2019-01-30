@@ -15,7 +15,7 @@
             </button>
         </div>
 
-        <div class="collapse navbar-collapse" data-nav-image="../assets/img//blurred-image-1.jpg" data-color="orange">
+        <div class="collapse navbar-collapse" data-nav-image="assets/img/blurred-image-1.jpg" data-color="orange">
             <ul class="navbar-nav ml-auto">
 
 
@@ -33,34 +33,29 @@
                         <p>VIEW CARS</p>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="categories.php">
-                            <i class="now-ui-icons shopping_box"></i>
-                            CATEGORIES
-                        </a>
                         <a class="dropdown-item" href="browse.php">
-                            <i class="now-ui-icons files_box"></i>
+                            <i class="now-ui-icons shopping_delivery-fast"></i>
                             BROWSE
                         </a>
+                        <a class="dropdown-item" href="index.php#manufacturers">
+                            <i class="now-ui-icons shopping_delivery-fast"></i>
+                            MANUFACTURERS
+                        </a>
+                        <a class="dropdown-item" href="categories.php">
+                            <i class="now-ui-icons shopping_delivery-fast"></i>
+                            CATEGORIES
+                        </a>
+
 
                     </div>
                 </li>
 
                 <li class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown">
+                    <a href="blog.php" class="nav-link dropdown-togglev" id="navbarDropdownMenuLink">
                         <i class="now-ui-icons files_single-copy-04" aria-hidden="true"></i>
                         <p>BLOGS</p>
                     </a>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="#">
-                            <i class="now-ui-icons text_align-left"></i>
-                            ARTICLES
-                        </a>
-                        <a class="dropdown-item" href="#">
-                            <i class="now-ui-icons design_image"></i>
-                            GALLERY
-                        </a>
 
-                    </div>
                 </li>
 
                 <li class="nav-item dropdown">

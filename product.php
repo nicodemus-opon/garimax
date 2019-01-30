@@ -1,10 +1,8 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: nico
- * Date: 2019-01-04
- * Time: 14:48
- */ ?>
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+?>
 <?php
 include('includes/head.php');
 include('includes/navbar.php');
@@ -35,7 +33,10 @@ $d = 'dashboard/vehicles/' . $ids;
 //echo $d;
 $files = scandir($d);
 //print_r($files);
-$urlr = "https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"
+//echo "yyyyyyyyy";
+//print_r($files);
+$urlr = "https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+$kk = "https://$_SERVER[HTTP_HOST]" . '/dashboard/vehicles/' . $fulldir;
 ?>
 <meta property="og:image" content="https://garimax/co.ke/dashboard/vehicles/<?php
 echo $fulldir;
@@ -57,8 +58,8 @@ echo $fulldir;
                                 <?php
                                 $s = 0;
                                 foreach ($files as $f) {
-                                    //echo $fi;
-                                    if ($y === 2) {
+                                    //echo $f;
+                                    if ($s === 0) {
                                         echo '<li data-target="#productCarousel" data-slide-to="' . $s . '" class="active"></li>';
                                     } else {
                                         echo '<li data-target="#productCarousel" data-slide-to="' . $s . '"></li>';
@@ -80,7 +81,7 @@ echo $fulldir;
                                         $y += 1;
                                         continue;
                                     }
-                                    if ($y === 4) {
+                                    if ($y === 2) {
                                         echo '<div class="carousel-item active">
                                 <img class="d-block img-raised" src="dashboard/vehicles/' . $ids . '/' . $fi . '" alt="First slide">
                             </div>';
@@ -163,7 +164,8 @@ echo $fulldir;
                         <button class="btn btn-primary btn-simple mr-3" data-toggle="modal" data-target="#myModal">Share
                             Link for this Car &nbsp;<i
                                     class="now-ui-icons ui-1_send"></i></button>
-                        <button class="btn btn-primary mr-3">Request This Car &nbsp;<i
+                        <button class="btn btn-primary mr-3" data-toggle="modal" data-target="#exampleModal">Request
+                            This Car &nbsp;<i
                                     class="now-ui-icons arrows-1_minimal-right"></i></button>
 
                     </div>
@@ -178,7 +180,7 @@ echo $fulldir;
         </p>
         <div class="row">
             <?php
-            $sql = "SELECT * FROM cars where idx <>'" . $ids . "' ORDER BY RAND() LIMIT 6;";
+            $sql = "SELECT * FROM cars where idx <>'" . $ids . "' ORDER BY RAND() LIMIT 3;";
             //echo $sql;
             $result = $con->query($sql);
             if ($result->num_rows > 0) {
@@ -216,6 +218,8 @@ echo $fulldir;
 
 
 </div>
+
+
 <div class="modal fade " id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="display: none;"
      aria-hidden="true">
     <div class="modal-dialog ">
@@ -224,10 +228,13 @@ echo $fulldir;
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
                     <i class="now-ui-icons ui-1_simple-remove"></i>
                 </button>
-                <h4 class="title title-up">Share Link</h4>
+                <h5 class="title title-up">Share Link for <?php
+                    echo $titlex;
+                    ?></h5>
+
             </div>
             <div class="modal-body">
-                <p><input class="form-control" type="text"
+                <p><input class="form-control form-control-lg" type="text"
                           placeholder="<?php echo $urlr;
                           ?>" readonly>
                 </p>
@@ -236,11 +243,11 @@ echo $fulldir;
                     <div class="col-4">
                         <div class="card card-profile card-plain">
                             <div class="card-avatar">
-                                <a href="whatsapp://send?<?php echo $urlr;
+                                <a href="whatsapp://send?text=<?php echo $urlr;
                                 ?>" data-action="share/whatsapp/share">
 
                                     <img class="img img-raised" src="assets/socicons/whatsapp.png">
-                                    <h6 class="card-title">WhatsApp</h6>
+                                    <h8 class="card-title">WhatsApp</h8>
                                 </a>
                             </div>
 
@@ -250,9 +257,13 @@ echo $fulldir;
                     <div class="col-4">
                         <div class="card card-profile card-plain">
                             <div class="card-avatar">
-                                <a href="http://www.facebook.com/sharer.php?s=100&p[title]=YOUR_TITLE&p[summary]=YOUR_SUMMARY&p[url]=YOUR_URL&p[images][0]=YOUR_IMAGE_TO_SHARE_OBJECT">
+                                <a href="http://www.facebook.com/sharer.php?s=100&p[title]=<?php echo $titlex;
+                                ?>&p[summary]=<?php echo $descx;
+                                ?>&p[url]=<?php echo $urlr;
+                                ?>&p[images][0]=<?php echo $kk;
+                                ?>">
                                     <img class="img img-raised" src="assets/socicons/facebook.png">
-                                    <h6 class="card-title">Facebook</h6>
+                                    <h8 class="card-title">Facebook</h8>
                                 </a>
                             </div>
 
@@ -261,9 +272,10 @@ echo $fulldir;
                     <div class="col-4">
                         <div class="card card-profile card-plain">
                             <div class="card-avatar">
-                                <a href="#pablo">
+                                <a href="sms://+0723363636?body=<?php echo $urlr;
+                                ?>">
                                     <img class="img img-raised" src="assets/socicons/telegram.png">
-                                    <h6 class="card-title">Messaging</h6>
+                                    <h8 class="card-title">Message</h8>
                                 </a>
                             </div>
 
@@ -275,6 +287,69 @@ echo $fulldir;
 
             </div>
 
+        </div>
+    </div>
+</div>
+
+<!-- Request Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Request this car</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form action="request.php" method="post">
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-2">
+                    </div>
+                    <div class="col-8">
+                        <div class="text-center">
+                            <div class="card-avatar">
+                                <img class="img img-raised img-circle" src="dashboard/vehicles/Vans566329/img3.jpeg">
+                                <h8 class="card-title"><?php
+                                    echo $titlex;
+                                    ?></h8>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-2"></div>
+                </div>
+
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Phone Number <i class="text-danger">*</i></label>
+                        <input type="phone" name="phone" class="form-control" id="exampleInputPassword1"
+                               placeholder="Your Phone Number">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input type="text" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp"
+                               placeholder="Enter email">
+                        <!--button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button-->
+                    </div>
+                    <input type="hidden" name="idx" value="<?php
+                    echo $titlex;
+                    ?>">
+                <input type="hidden" name="urlx" value="<?php
+                echo $urlr;;
+                ?>">
+                <input type="hidden" name="disx" value="<?php
+                echo $kk;
+                ?>">
+            </div>
+            <div class="modal-footer">
+
+                    <button type="submit" class="btn btn-primary btn-block btn-round">Request this car <i
+                                class="now-ui-icons arrows-1_minimal-right"></i></button>
+
+
+            </div>
+            </form>
         </div>
     </div>
 </div>

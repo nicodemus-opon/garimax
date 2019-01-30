@@ -27,9 +27,7 @@ include('includes/connect.php');
                         <input type="submit" class="btn btn-primary btn-block btn-round btn-lg" value="Search"
                                autocomplete=""/>
                     </div>
-
                     <div class="col-1h">
-
                     </div>
                 </div>
             </div-->
