@@ -1,5 +1,5 @@
 <?php
-if (isset($_SESSION['namex']) && !empty($_SESSION['namex'])) {
+if (isset($_GET['id'])) {
     require '../includes/connect.php';
 //http://localhost/garimax/dashboard/?title=&shortdesc=&price=&category=&specs=&imgs=img13.jpeg&imgs=img17.jpeg
     $ti = $_GET['id'];

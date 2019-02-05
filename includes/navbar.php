@@ -28,15 +28,20 @@
                 </li>
 
                 <li class="nav-item dropdown">
+                    <a href="browse.php" class="nav-link dropdown-togglev" id="navbarDropdownMenuLink">
+                        <i class="now-ui-icons files_single-copy-04" aria-hidden="true"></i>
+                        <p>BROWSE ALL CARS</p>
+                    </a>
+
+                </li>
+
+                <li class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown">
                         <i class="now-ui-icons ui-1_zoom-bold" aria-hidden="true"></i>
-                        <p>VIEW CARS</p>
+                        <p>VIEW CARS BY</p>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="browse.php">
-                            <i class="now-ui-icons shopping_delivery-fast"></i>
-                            BROWSE
-                        </a>
+
                         <a class="dropdown-item" href="index.php#manufacturers">
                             <i class="now-ui-icons shopping_delivery-fast"></i>
                             MANUFACTURERS
@@ -50,13 +55,7 @@
                     </div>
                 </li>
 
-                <li class="nav-item dropdown">
-                    <a href="blog.php" class="nav-link dropdown-togglev" id="navbarDropdownMenuLink">
-                        <i class="now-ui-icons files_single-copy-04" aria-hidden="true"></i>
-                        <p>BLOGS</p>
-                    </a>
 
-                </li>
 
                 <li class="nav-item dropdown">
                     <a href="index.php#contactx" class="nav-link dropdown-togglev" id="navbarDropdownMenuLink1" >
@@ -68,7 +67,7 @@
 
                 <li class="nav-item">
                     <a class="nav-link btn btn-neutral btn-round ccc" href="tel:0733626262" target="_blank">
-                        <p><i class="now-ui-icons tech_mobile"></i> CALL US</p>
+                        <p><i class="now-ui-icons tech_mobile"></i> CALL US +(254) 733 626 262</p>
                     </a>
                 </li>
 

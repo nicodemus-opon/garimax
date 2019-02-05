@@ -4,7 +4,7 @@ include('includes/navbar.php');
 ?>
 
 <?php
-/*
+
 if (isset($_POST["phone"])) {
     $phonex = $_POST["phone"];
     $idx = $_POST["idx"];
@@ -48,7 +48,7 @@ if (isset($_POST["phone"])) {
 
 
 }
-*/
+
 ?>
 <div class="blogs-1" id="blogs-1">
 
@@ -69,7 +69,7 @@ if (isset($_POST["phone"])) {
                         <div class="col-md-7">
 
                             <h5 class="card-title">
-                               Your request for xxx has been received and we will get back at you
+                               Your request for <em> <?php echo $idx; ?> </em> has been received and we will get back at you
                             </h5>
                             <h7>Feel free to: </h7>
                             <p class="card-description">

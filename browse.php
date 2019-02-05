@@ -33,29 +33,20 @@ include('includes/connect.php');
             </div-->
 
             <div class="row">
-                <div class="col-md-2">
+                <div class="col-md-3">
                     <div class="collapse-panel">
-                        <div class="card-body">
+
                             <div class="card card-refine card-plain">
                                 <h4 class="card-title">
                                     Refine
-                                    <button class="btn btn-default btn-icon btn-neutral pull-right" rel="tooltip"
+                                    <button class="btn btn-default btn-icon btn-primary pull-right" rel="tooltip"
                                             title="Reset Filter">
-                                        <i class="arrows-1_refresh-69 now-ui-icons"></i>
+                                        <i class="ui-1_zoom-bold now-ui-icons"></i>
                                     </button>
                                 </h4>
-                                <div class="card-header" role="tab" id="headingOne">
-                                    <h6 class="mb-0">
-                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"
-                                           aria-expanded="true" aria-controls="collapseOne">
-                                            Price Range
 
-                                            <i class="now-ui-icons arrows-1_minimal-down"></i>
-                                        </a>
-                                    </h6>
-                                </div>
 
-                                <div id="collapseOne" class="collapse show" role="tabpanel"
+                                <!--div id="collapseOne" class="collapse show" role="tabpanel"
                                      aria-labelledby="headingOne">
                                     <div class="card-body">
                                         <span id="price-left" class="price-left pull-left"
@@ -65,14 +56,14 @@ include('includes/connect.php');
                                         <div class="clearfix"></div>
                                         <div id="sliderRefine" class="slider slider-refine"></div>
                                     </div>
-                                </div>
-                            </div>
+                                </div-->
+
                             <div class="card card-refine card-plain">
                                 <div class="card-header" role="tab" id="headingTwo">
                                     <h6>
                                         <a class="collapsed" data-toggle="collapse" data-parent="#accordion"
                                            href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                            Category (Body Type)
+                                            Category
 
                                             <i class="now-ui-icons arrows-1_minimal-down"></i>
                                         </a>
@@ -179,14 +170,22 @@ include('includes/connect.php');
                     </div>
                 </div>
 
-                <div class="col-md-10">
+                <div class="col-md-9">
                     <div class="row">
 
                         <?php
+
                         //require_once "includes/connect.php";
                         // Create connectionhjh
                         //echo "Connected successfully";
-                        $sql = "select * from cars where idx is not NULL ";
+                        if (isset($_GET['q'])) {
+                            $mmi=trim($_GET['q']);
+                            $yu = implode("|",explode(" ", $mmi));
+                            //print($yu);
+                            }else{
+                            $yu = " ";
+                        }
+                        $sql = "SELECT * FROM cars WHERE searchx REGEXP '".$yu."'";
                         //echo $sql;
                         $result = $con->query($sql);
                         if ($result->num_rows > 0) {
@@ -219,9 +218,44 @@ include('includes/connect.php');
                             </div>
                         </div>';
 
-
                             }
+                        }else{
+                            echo '<div class="col-md-12 ml-auto mr-auto">
+                            <h4 class="title">Not available </h4>
+
+                            <br>
+                            <div class="card card-plain card-blog">
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        <div class="card-image">
+                                            <img class="img " src="assets/mi.png">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-7">
+
+                                        <h5 class="card-title">
+                                            could not find any cars similar to <em> '.$_GET["q"].' </em>
+                                        </h5>
+                                        <h7>Feel free to: </h7>
+                                        <p class="card-description">
+                                        <div class="card">
+                                            <ul class="list-group list-group-flush">
+                                                <a class="list-group-item  footer-link stats-link text-black"
+                                                   href="tel:0733626262">Call us at 0733626262 to inquire for similar cars</a>
+                                                <a class="footer-link list-group-item stats-link text-black"
+                                                   href="index.php#contactx">send us an email to sales@garimax.co.ke</a>
+                                                <a class="footer-link list-group-item stats-link text-black"
+                                                   href="browse.php">View other cars</a>
+                                            </ul>
+                                        </div>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>';
                         } ?>
+
 
 
                         <!--div class="col-md-3 ml-auto mr-auto">

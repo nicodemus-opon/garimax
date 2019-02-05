@@ -3,10 +3,7 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 ?>
-<?php
-include('includes/head.php');
-include('includes/navbar.php');
-?>
+
 
 <?php
 $ids = $_GET["q"];
@@ -38,9 +35,32 @@ $files = scandir($d);
 $urlr = "https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 $kk = "https://$_SERVER[HTTP_HOST]" . '/dashboard/vehicles/' . $fulldir;
 ?>
-<meta property="og:image" content="https://garimax/co.ke/dashboard/vehicles/<?php
+<meta name="title" content="<?php
+echo $titlex;
+?>">
+<meta name="description" content="<?php
+echo $descx;
+?>">
+<meta property="og:title" content="<?php
+echo $titlex;
+?>">
+<meta property="og:description" content="<?php
+echo $descx;
+?>">
+<meta property="og:image" content="https://garimax.co.ke/dashboard/vehicles/<?php
 echo $fulldir;
 ?>">
+<meta property="og:url" content="<?php
+echo $urlr;
+?>">
+<meta name="twitter:card" content="<?php
+echo $descx;
+?>">
+<?php
+include('includes/head.php');
+include('includes/navbar.php');
+?>
+
 <div class="wrapper">
     <div class="page-header page-header-mini">
         <div class="page-header-image" data-parallax="true" style="background-image: url('dashboard/vehicles/<?php
@@ -304,22 +324,25 @@ echo $fulldir;
                 </button>
             </div>
             <form action="request.php" method="post">
-            <div class="modal-body">
-                <div class="row">
-                    <div class="col-2">
-                    </div>
-                    <div class="col-8">
-                        <div class="text-center">
-                            <div class="card-avatar">
-                                <img class="img img-raised img-circle" src="dashboard/vehicles/Vans566329/img3.jpeg">
-                                <h8 class="card-title"><?php
-                                    echo $titlex;
-                                    ?></h8>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-2">
+                        </div>
+                        <div class="col-8">
+                            <div class="text-center">
+                                <div class="card-avatar">
+                                    <img class="img img-raised img-circle"
+                                         src="dashboard/vehicles/<?php
+                                         echo $fulldir;
+                                         ?>">
+                                    <h8 class="card-title"><?php
+                                        echo $titlex;
+                                        ?></h8>
+                                </div>
                             </div>
                         </div>
+                        <div class="col-2"></div>
                     </div>
-                    <div class="col-2"></div>
-                </div>
 
                     <div class="form-group">
                         <label for="exampleInputPassword1">Phone Number <i class="text-danger">*</i></label>
@@ -328,27 +351,28 @@ echo $fulldir;
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Email address</label>
-                        <input type="text" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp"
+                        <input type="text" class="form-control" name="email" id="exampleInputEmail1"
+                               aria-describedby="emailHelp"
                                placeholder="Enter email">
                         <!--button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button-->
                     </div>
                     <input type="hidden" name="idx" value="<?php
                     echo $titlex;
                     ?>">
-                <input type="hidden" name="urlx" value="<?php
-                echo $urlr;;
-                ?>">
-                <input type="hidden" name="disx" value="<?php
-                echo $kk;
-                ?>">
-            </div>
-            <div class="modal-footer">
+                    <input type="hidden" name="urlx" value="<?php
+                    echo $urlr;;
+                    ?>">
+                    <input type="hidden" name="disx" value="<?php
+                    echo $kk;
+                    ?>">
+                </div>
+                <div class="modal-footer">
 
                     <button type="submit" class="btn btn-primary btn-block btn-round">Request this car <i
-                                class="now-ui-icons arrows-1_minimal-right"></i></button>
+                                class="now-ui-icons jii arrows-1_minimal-right "></i></button>
 
 
-            </div>
+                </div>
             </form>
         </div>
     </div>
@@ -361,7 +385,12 @@ include('includes/footer.php');
 include('includes/end.php');
 
 ?>
+<script>
+    $(document).ready(function () {
 
+
+    });
+</script>
 
 
 

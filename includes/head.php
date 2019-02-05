@@ -4,7 +4,7 @@
 <head>
     <title>Garimax Motors Ltd</title>
     <meta charset="utf-8"/>
-    <link rel="apple-touch-icon" sizes="76x76" href="./assets/img/apple-icon.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="./assets/img/favicoon.png">
     <link rel="icon" type="image/png" href="./assets/img/favicon.png">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <script type="application/ld+json">
@@ -73,10 +73,6 @@
     <!--  Social tags      -->
     <meta name="keywords"
           content="Garimax, Gari Max, Car dealership Kenya, used cars,cheap,quality,garimax motors,cars,kenya,garimax motors ltd">
-    <meta name="description"
-          content="Garimax Motors ltd ,explore the vast model range of new and used cars by
-widely known manufacturers on our website.
-With a robust selection of popular vehicles on hand, as well as leading vehicles from BMW and Toyota.We offer bank financing Hire purchase with a maximum duration of 12months">
 
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -90,6 +86,9 @@ With a robust selection of popular vehicles on hand, as well as leading vehicles
     <link rel="stylesheet" href="./assets/aos.css">
     <link href="./assets/hover/css/hover-min.css" rel="stylesheet">
     <!--Start of Tawk.to Script-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+
     <script type="text/javascript">
         var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
         (function(){

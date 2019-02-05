@@ -53,7 +53,8 @@ for ($i = 0; $i < $total; $i++) {
     }
 }
 $id=$folder;
-$sql = "insert into cars values ('" . $id . "','" . $title . "','" . $shortdesc ."','" . $category ."','" . $price ."','" . $specs ."','" .$display."');";
+$ftt=$id . " " . $title . " " . $shortdesc ." " . $category ." " . $price ." " . $specs ." " .$display." ";
+$sql = "insert into cars values ('" . $id . "','" . $title . "','" . $shortdesc ."','" . $category ."','" . $price ."','" . $specs ."','" .$display."','".$ftt."');";
 //echo $sql;
 if ($con->query($sql) === true) {
     //echo 'socsesss';

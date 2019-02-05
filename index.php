@@ -1,3 +1,10 @@
+<meta name="description"
+      content="Garimax Motors ltd ,explore the vast model range of new and used cars by
+widely known manufacturers on our website.
+With a robust selection of popular vehicles on hand, as well as leading vehicles from BMW and Toyota.We offer bank financing Hire purchase with a maximum duration of 12months">
+<meta property="og:image" content="assets/img/favicon.png">
+<!-- Google Tag Manager (noscript) -->
+
 <?php
 /*
 ini_set('display_errors', 1);
@@ -35,8 +42,7 @@ if ($result->num_rows > 0) {
     }
 }
 ?>
-<meta property="og:image" content="assets/img/favicon.png">
-<!-- Google Tag Manager (noscript) -->
+
 <noscript>
     <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NKDMSK6"
             height="0" width="0" style="display:none;visibility:hidden"></iframe>
@@ -50,44 +56,45 @@ if ($result->num_rows > 0) {
         <div class="container">
             <div class="row" style="padding-top: 20px">
                 <div class="col-md-8 ml-auto mr-auto text-center">
-                    <img src="assets/img/favicon.png" alt="Circle Image" style="height:160px;width:160px;"
-                         class="rounded-circle">
-                    <h2 class="title"> Garimax Motors </h2>
+                    <div class="d-none d-sm-block">
+                        <img src="assets/img/favicon.png" alt="Circle Image" style="height:180px;width:180px;"
+                             class="rounded-circle">
+                    </div>
+                    <div class="d-block d-sm-none">
+                        <img src="assets/img/favicon.png" alt="Circle Image" style="height:160px;width:160px;"
+                             class="rounded-circle">
+                    </div>
+                    <h3 class="title"> Garimax Motors
+                        <div class="d-none d-sm-block">
+                            Find the appropriate car for you
+                        </div>
+                    </h3>
+
+
                     <h5 class="description">Explore the vast model range of new and <br>used cars by
                         widely known manufacturers.
                     </h5>
-                    <div data-aos="zoom-in-up"><a
-                                class="btn  btn-neutral btn-round btn-lg   hvr-wobble-bottom ml-auto mr-auto"
 
-                                href="#cars">View Cars <i class="now-ui-icons arrows-1_minimal-right"></i></a>
-                        <!--h5 class="descriptionv"-->
-                        <a class="btn btn-primary btn-lg btn-neutrali btn-round hvr-wobble-bottom ml-auto mr-auto"
-                           data-toggle="collapse"
-                           href="#collapseExample" aria-expanded="false"
-                           aria-controls="collapseExample">
-                            ... Or Search Cars <i class="now-ui-icons ui-1_zoom-bold"></i>
-                        </a><!--/h5 style="padding-left: 80px;padding-right: 80px;" -->
-                    </div>
 
                     <div class="collapse" id="collapseExample">
 
                         <div class="col-md-12 ml-auto mr-auto">
                             <div class="card card-raised card-form-horizontal card-plain" data-background-color>
                                 <div class="card-body">
-                                    <form method="" action="">
+                                    <form method="post" action="searchhandler.php">
                                         <div class="row">
                                             <div class="col-md-2" style="padding-top: 20px">
                                                 <div class="form-group">
                                                     <select class="selectpickers form-control form-control-lg text-primarys"
-                                                            data-style="select-with-transition btn-primary btn-round"
+                                                            name="catx"   data-style="select-with-transition btn-primary btn-round"
                                                             title="Select Category" data-size="7">
-                                                        <option class="text-primary" value="1">Category
+                                                        <option class="text-primary" value="">Category
                                                         </option>
-                                                        <option class="text-primary" value="2">Saloons</option>
-                                                        <option class="text-primary" value="3">Wagons</option>
-                                                        <option class="text-primary" value="3">Vans</option>
-                                                        <option class="text-primary" value="3">Pick Ups</option>
-                                                        <option class="text-primary" value="3">4x4</option>
+                                                        <option class="text-primary" value="Saloons">Saloons</option>
+                                                        <option class="text-primary" value="Wagons">Wagons</option>
+                                                        <option class="text-primary" value="Vans">Vans</option>
+                                                        <option class="text-primary" value="Pick Ups">Pick Ups</option>
+                                                        <option class="text-primary" value="4x4">4x4</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -97,13 +104,13 @@ if ($result->num_rows > 0) {
 
                                                     <select class="selectpickere form-control form-control-lg text-primarys "
                                                             data-style="select-with-transition btn-primary btn-round"
-                                                            title="Select Price Range"  data-size="7">
-                                                        <option class="text-primary" value="1">Price Range
+                                                            name="pricex" title="Select Price Range" data-size="7">
+                                                        <option class="text-primary" value="">Price Range
                                                         </option>
-                                                        <option class="text-primary" value="2">100-500</option>
-                                                        <option class="text-primary" value="3">500-1000</option>
-                                                        <option class="text-primary" value="3">1000-1500</option>
-                                                        <option class="text-primary" value="3">1500-2000</option>
+                                                        <option class="text-primary" value="1.5m">100-500</option>
+                                                        <option class="text-primary" value="1.5m">500-1000</option>
+                                                        <option class="text-primary" value="1.5m">1000-1500</option>
+                                                        <option class="text-primary" value="1.5m">1500-2000</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -113,18 +120,19 @@ if ($result->num_rows > 0) {
                                                     <!--div class="input-group-prepend ">
                                                         <div class="input-group-text"><i class="now-ui-icons ui-1_zoom-bold"></i></div>
                                                     </div-->
-                                                    <input type="text" list="browsers" id="template-icon-left" placeholder="Search cars..." class="form-control"
-                                                           />
-                                                    <datalist id="browsers" >
+                                                    <input type="text" list="browsers" name="searchx" id="template-icon-left"
+                                                           placeholder="Search cars..." class="form-control"
+                                                    />
+                                                    <datalist id="browsers">
 
                                                         <?php
                                                         $sql = "select DISTINCT titlex from cars ";
                                                         $result = $con->query($sql);
 
                                                         if ($result->num_rows > 0) {
-                                                        while ($ro = $result->fetch_assoc()) {
-                                                            echo '<option value="' . $ro["titlex"] . '">';
-                                                        }
+                                                            while ($ro = $result->fetch_assoc()) {
+                                                                echo '<option value="' . $ro["titlex"] . '">';
+                                                            }
                                                         }
                                                         ?>
 
@@ -146,7 +154,97 @@ if ($result->num_rows > 0) {
                         </div>
 
                     </div>
+                    <div class="d-none d-sm-block">
+                        <div class="col-md-12 ml-auto mr-auto">
+                            <div class="card card-raised card-form-horizontal card-plain" data-background-color>
+                                <div class="card-body">
+                                    <form method="post" action="searchhandler.php">
+                                        <div class="row">
+                                            <div class="col-md-2" style="padding-top: 20px">
+                                                <div class="form-group">
+                                                    <select class="selectpickers form-control form-control-lg text-primarys"
+                                                            name="catx" data-style="select-with-transition btn-primary btn-round"
+                                                            title="Select Category" data-size="7">
+                                                        <option class="text-primary" value="">Category
+                                                        </option>
+                                                        <option class="text-primary" value="Saloons">Saloons</option>
+                                                        <option class="text-primary" value="Wagons">Wagons</option>
+                                                        <option class="text-primary" value="Vans">Vans</option>
+                                                        <option class="text-primary" value="Pick Ups">Pick Ups</option>
+                                                        <option class="text-primary" value="4x4">4x4</option>
+                                                    </select>
+                                                </div>
+                                            </div>
 
+                                            <div class="col-md-2" style="padding-top: 20px">
+                                                <div class="form-group">
+
+                                                    <select class="selectpickere form-control form-control-lg text-primarys "
+                                                            name="pricex" data-style="select-with-transition btn-primary btn-round"
+                                                            title="Select Price Range" data-size="7">
+                                                        <option class="text-primary" value="">Price Range
+                                                        </option>
+                                                        <option class="text-primary" value="1.5m">100-500</option>
+                                                        <option class="text-primary" value="1.5m">500-1000</option>
+                                                        <option class="text-primary" value="1.5m">1000-1500</option>
+                                                        <option class="text-primary" value="1.5m">1500-2000</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-8" style="padding-top: 20px">
+                                                <div class="form-group input-group-lg ">
+                                                    <!--div class="input-group-prepend ">
+                                                        <div class="input-group-text"><i class="now-ui-icons ui-1_zoom-bold"></i></div>
+                                                    </div-->
+                                                    <input type="text" name="searchx"list="browsers" id="template-icon-left"
+                                                           placeholder="Search cars..." class="form-control"
+                                                    />
+                                                    <datalist id="browsers">
+
+                                                        <?php
+                                                        $sql = "select DISTINCT titlex from cars ";
+                                                        $result = $con->query($sql);
+
+                                                        if ($result->num_rows > 0) {
+                                                            while ($ro = $result->fetch_assoc()) {
+                                                                echo '<option value="' . $ro["titlex"] . '">';
+                                                            }
+                                                        }
+                                                        ?>
+
+                                                    </datalist>
+                                                </div>
+                                            </div>
+                                            <!--div class="col-md-1">
+                                                <button type="button" class="btn btn-primary btn-round btn-block">
+
+                                                        <i class="now-ui-icons ui-1_zoom-bold"></i>
+
+                                                </button>
+                                            </div-->
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div datai-aos="zoom-in-up"><a
+                                class="btn  btn-neutral btn-round btn-lg   hvr-wobble-bottom ml-auto mr-auto"
+
+                                href="#cars">View Cars <i class="now-ui-icons arrows-1_minimal-right"></i></a>
+                        <!--h5 class="descriptionv"-->
+                        <div class="d-block d-sm-none">
+                            <a class="btn btn-primary btn-lg btn-neutrali btn-round hvr-wobble-bottom ml-auto mr-auto"
+                               data-toggle="collapse"
+                               href="#collapseExample" aria-expanded="false"
+                               aria-controls="collapseExample">
+                                ... Or Search Cars <i class="now-ui-icons ui-1_zoom-bold"></i>
+                            </a>
+                        </div>
+                        <!--/h5 style="padding-left: 80px;padding-right: 80px;" -->
+                    </div>
                 </div>
 
             </div>
@@ -239,27 +337,27 @@ if ($result->num_rows > 0) {
                     <div class="card">
                         <ul class="list-group list-group-flush">
                             <a class="list-group-item  footer-link stats-link text-black"
-                                                           href="browse.php?q=toyota">Toyota</a>
+                               href="browse.php?q=toyota">Toyota</a>
                             <a class="footer-link list-group-item stats-link text-black"
-                                                           href="browse.php?q=BMW">BMW</a>
+                               href="browse.php?q=BMW">BMW</a>
                             <a class="footer-link list-group-item stats-link text-black"
-                                                           href="browse.php?q=Volkswagen">Volkswagen</a>
+                               href="browse.php?q=Volkswagen">Volkswagen</a>
                             <a class="list-group-item footer-link stats-link text-black"
-                                                           href="browse.php?q=Nissan">Nissan</a>
+                               href="browse.php?q=Nissan">Nissan</a>
                             <a class="list-group-item footer-link stats-link text-black"
-                                                           href="browse.php?q=Audi">Audi</a>
+                               href="browse.php?q=Audi">Audi</a>
                             <a class="list-group-item footer-link stats-link text-black"
-                                                           href="browse.php?q=Mercedes Benz">Mercedes Benz</a>
+                               href="browse.php?q=Mercedes Benz">Mercedes Benz</a>
                             <a class="list-group-item footer-link stats-link text-black"
-                                                           href="browse.php?q=Volvo">Volvo</a>
+                               href="browse.php?q=Volvo">Volvo</a>
                             <a class="list-group-item footer-link stats-link text-black"
-                                                           href="browse.php?q=Isuzu">Isuzu</a>
+                               href="browse.php?q=Isuzu">Isuzu</a>
                             <a class="list-group-item footer-link stats-link text-black"
-                                                           href="browse.php?q=Land Rover">Land Rover</a>
+                               href="browse.php?q=Land Rover">Land Rover</a>
                             <a class="list-group-item footer-link stats-link text-black"
-                                                           href="browse.php?q=Honda">Honda</a>
+                               href="browse.php?q=Honda">Honda</a>
                             <a class="list-group-item footer-link stats-link text-black"
-                                                           href="browse.php?q=Suzuki">Suzuki</a>
+                               href="browse.php?q=Suzuki">Suzuki</a>
 
                         </ul>
                     </div>
@@ -356,6 +454,7 @@ if ($result->num_rows > 0) {
         <p></p>
     </div>
 
+
     <div class="contactus-1 section-image" id="contactx"
          style="background-image: url('assets/img/bgk.jpg')">
 
@@ -410,33 +509,33 @@ if ($result->num_rows > 0) {
                 <div class="col-md-5 ml-auto mr-auto">
 
                     <div class="card card-contact card-raised">
-                        <form role="form" id="contact-form1" method="post">
+                        <form role="form" id="contact-form1" action="https://formspree.io/sales@garimax.co.ke" method="post">
                             <div class="card-header text-center">
                                 <h4 class="card-title">Contact Us</h4>
                             </div>
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-md-6 pr-2">
-                                        <label>First name</label>
+                                        <label>Full name</label>
                                         <div class="input-group">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text"><i
                                                             class="now-ui-icons users_circle-08"></i></span>
                                             </div>
-                                            <input type="text" class="form-control" placeholder="First Name..."
-                                                   aria-label="First Name..." autocomplete="given-name">
+                                            <input type="text" class="form-control" placeholder="Your Name..."
+                                                   name="client_name" aria-label="First Name..." autocomplete="given-name">
                                         </div>
                                     </div>
                                     <div class="col-md-6 pl-2">
                                         <div class="form-group">
-                                            <label>Last name</label>
+                                            <label>Phone Number</label>
                                             <div class="input-group">
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text"><i
-                                                                class="now-ui-icons text_caps-small"></i></span>
+                                                                class="now-ui-icons tech_mobile"></i></span>
                                                 </div>
-                                                <input type="text" class="form-control" placeholder="Last Name..."
-                                                       aria-label="Last Name..." autocomplete="family-name">
+                                                <input type="phone" class="form-control" placeholder="Phone Number..."
+                                                      name="phone" aria-label="Last Name..." autocomplete="family-name">
                                             </div>
                                         </div>
                                     </div>
@@ -449,7 +548,7 @@ if ($result->num_rows > 0) {
                                                         class="now-ui-icons ui-1_email-85"></i></span>
                                         </div>
                                         <input type="email" class="form-control" placeholder="Email Here..."
-                                               autocomplete="email">
+                                               name="email" autocomplete="email">
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -485,38 +584,3 @@ include('includes/footer.php');
 include('includes/end.php');
 
 ?>
-<!-- JS file -->
-<script src="node_modules/easy-autocomplete/dist/jquery.easy-autocomplete.min.js"></script>
-
-<!-- CSS file -->
-<link rel="stylesheet" href="node_modules/easy-autocomplete/dist/easy-autocomplete.min.css">
-
-<!-- Additional CSS Themes file - not required-->
-<link rel="stylesheet" href="node_modules/easy-autocomplete/dist/easy-autocomplete.themes.min.css">
-<script>
-    $(document).ready(function () {
-        //$(".text-black").removeAttr("href");
-        //var jj = trim($(this).html());
-        var options = {
-            data: [ {name: "Avionet", type: "air", icon: "http://lorempixel.com/100/50/transport/2"},
-                {name: "Car", type: "ground", icon: "http://lorempixel.com/100/50/transport/8"},
-                {name: "Motorbike", type: "ground", icon: "http://lorempixel.com/100/50/transport/10"},
-                {name: "Plane", type: "air", icon: "http://lorempixel.com/100/50/transport/1"},
-                {name: "Train", type: "ground", icon: "http://lorempixel.com/100/50/transport/6"}],
-
-            getValue: "name",
-
-            template: {
-                type: "iconLeft",
-                fields: {
-                    iconSrc: "icon"
-                }
-            }
-        };
-
-        $("#template-icon-leftg").easyAutocomplete(options);
-
-    });
-</script>
-
-
